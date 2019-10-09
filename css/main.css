@@ -1157,7 +1157,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #cd4e9e;
+  background: #ffb3ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2448,7 +2448,8 @@ hr {
   background-color: #222;
 }
 .posts-expand .post-body img {
-  margin: auto;
+  margin-left: 0;
+  margin: 0 auto;
 }
 .posts-expand .post-tags {
   text-align: left;
@@ -2493,6 +2494,9 @@ hr {
   font-family: 'Do Hyeon', sans-serif;
   font-size: 2em;
   line-height: 1.4em;
+}
+.post-body img {
+  margin: auto;
 }
 .btn {
   border-radius: 0;
