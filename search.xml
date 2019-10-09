@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[GitHub+Hexo for Personal Blog]]></title>
+    <url>%2F2019%2F10%2F09%2FGitHub-Hexo-for-Personal-Blog%2F</url>
+    <content type="text"><![CDATA[前言几个月前准备保研，在网上搜索老师信息时，进了一位老师的个人博客，当时有被“性冷淡”的博客界面风格吸引到（后来发现还是有挺多用这个主题的…）。保研去向尘埃落定，虽然最后没有跟随那位“博主”老师（因为压根就没有回我邮件2333，故事还没开始就结束了），但在这段清闲的日子还是想着自己也弄个Blog打发一下时间。随便在网上搜索了一下，决定了用GitHub + Hexo搭建个人博客，之后顺藤摸瓜从那位老师的GitHub对应仓库找到那款 “性冷淡” 简约风格主题——NexT。 写这篇的原因一是为了记录，但其实类似的教程多不胜数，我自己也看了许多人写的搭建过程，都是大同小异。所以这里只记录最最基本的流程以及少数自己用到的个性化操作，后续有增加的话再来修改这一篇或者另写就行了。写这篇的另一个原因就是熟悉一下Markdown语法，还是多有趣的一件事:) Hexo: https://hexo.ioMarkdown Doc(Simple Chinese): https://markdown-zh.readthedocs.io/en/latest/ Preinstallation install Node.js https://nodejs.org/en/download/ install git https://git-scm.com/download/win install hexo(Bash recommended) $npm install hexo-cli -g SSH keys git bash $ cd ~/. ssh to check exisiting ssh keys, if ‘No such file or directory’ , thenssh-keygen -t rsa -C &quot;your_email@example.com&quot; to generate key file. $ cat ~/.ssh/id_rsa.pub and copy the content in the key file. create key in GitHub: account Settings-&gt;SSH and GPG keys-&gt;New SSH keys. check the SSH key $ ssh -T git@github.com #do not modify the address and ‘Hi MatthewXY01! You’ve successfully authenticated, but GitHub does not provide shell access.’ represents successful configuration. Initialization create an empty folder called hexo (whatever) eg. ‘M:\hexo’ git bash here and 123$ hexo init #hexo会自动下载一些文件到这个目录，包括node_modules$ hexo g #或者 hexo generate 生成文件$ hexo s #或者 hexo server 启动服务，之后hexo 在public 生成相关html，可通过local test 查看本地预览 local test: http://localhost:4000/ Deploy install deployer: git bash npm install hexo-deployer-git --save in hexo folder, modify the _config.yml file as follows:1234deploy: type: git repository: git@github.com:MatthewXY01/MatthewXY01.github.io.git #SSH address branch: master type $ hexo g and $ hexo d or type $ hexo d -g Theme—NexT the simplest way to install is to clone the entire repository: 12$ cd hexo $ git clone https://github.com/theme-next/hexo-theme-next themes/next-reloaded config the theme in the file ‘/themes/next-reloaded/_config.yml’. (many subsequent modifications are made here!) Local search $npm install hexo-generator-searchdb --save in the theme _config.yml, set local_search: enable: true. paste the following lines anywhere: 12345search: path: search.xml field: post #post, page, all format: html limit: 10000 Social links int the theme _config.yml, set as follow: 123social: GitHub: https://github.com/MatthewXY01 || github E-Mail: mailto:mxinyuan@foxmail.com || envelope MenuTips]]></content>
+      <categories>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>GitHub</tag>
+        <tag>Hexo</tag>
+        <tag>Markdown</tag>
+        <tag>Next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F10%2F07%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
