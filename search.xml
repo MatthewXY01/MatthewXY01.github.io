@@ -1,9 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[GitHub+Hexo for Personal Blog]]></title>
-    <url>%2F2019%2F10%2F09%2FGitHub-Hexo-for-Personal-Blog%2F</url>
-    <content type="text"><![CDATA[前言几个月前准备保研，在网上搜索老师信息时，进了一位老师的个人博客，当时有被“性冷淡”的博客界面风格吸引到（后来发现还是有挺多用这个主题的…）。保研去向尘埃落定，虽然最后没有跟随那位“博主”老师（因为压根就没有回我邮件2333，故事还没开始就结束了），但在这段清闲的日子还是想着自己也弄个Blog打发一下时间。随便在网上搜索了一下，决定了用GitHub + Hexo搭建个人博客，之后顺藤摸瓜从那位老师的GitHub对应仓库找到那款 “性冷淡” 简约风格主题——NexT。 写这篇的原因一是为了记录，但其实类似的教程多不胜数，我自己也看了许多人写的搭建过程，都是大同小异。所以这里只记录最最基本的流程以及少数自己用到的个性化操作，后续有增加的话再来修改这一篇或者另写就行了。写这篇的另一个原因就是熟悉一下Markdown语法，还是多有趣的一件事:) Hexo: https://hexo.ioMarkdown Doc(Simple Chinese): https://markdown-zh.readthedocs.io/en/latest/ Preinstallation install Node.js https://nodejs.org/en/download/ install git https://git-scm.com/download/win install hexo(Bash recommended) $npm install hexo-cli -g SSH keys git bash $ cd ~/. ssh to check exisiting ssh keys, if ‘No such file or directory’ , thenssh-keygen -t rsa -C &quot;your_email@example.com&quot; to generate key file. $ cat ~/.ssh/id_rsa.pub and copy the content in the key file. create key in GitHub: account Settings-&gt;SSH and GPG keys-&gt;New SSH keys. check the SSH key $ ssh -T git@github.com #do not modify the address and ‘Hi MatthewXY01! You’ve successfully authenticated, but GitHub does not provide shell access.’ represents successful configuration. Initialization create an empty folder called hexo (whatever) eg. ‘M:\hexo’ git bash here and 123$ hexo init #hexo会自动下载一些文件到这个目录，包括node_modules$ hexo g #或者 hexo generate 生成文件$ hexo s #或者 hexo server 启动服务，之后hexo 在public 生成相关html，可通过local test 查看本地预览 local test: http://localhost:4000/ Deploy install deployer: git bash npm install hexo-deployer-git --save in hexo folder, modify the _config.yml file as follows:1234deploy: type: git repository: git@github.com:MatthewXY01/MatthewXY01.github.io.git #SSH address branch: master type $ hexo g and $ hexo d or type $ hexo d -g Theme—NexT the simplest way to install is to clone the entire repository: 12$ cd hexo $ git clone https://github.com/theme-next/hexo-theme-next themes/next-reloaded config the theme in the file ‘/themes/next-reloaded/_config.yml’. (many subsequent modifications are made here!) Local search $npm install hexo-generator-searchdb --save in the theme _config.yml, set local_search: enable: true. paste the following lines anywhere: 12345search: path: search.xml field: post #post, page, all format: html limit: 10000 Social links int the theme _config.yml, set as follow: 123social: GitHub: https://github.com/MatthewXY01 || github E-Mail: mailto:mxinyuan@foxmail.com || envelope MenuTips]]></content>
+    <title>GitHub+Hexo for Personal Blog</title>
+    <url>/2019/10/09/GitHub-Hexo-for-Personal-Blog/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>几个月前准备保研，在网上搜索老师信息时，进了一位老师的个人博客，当时有被“性冷淡”的博客界面风格吸引到（后来发现还是有挺多用这个主题的…）。保研去向尘埃落定，虽然最后没有跟随那位“博主”老师（因为压根就没有回我邮件2333，故事还没开始就结束了），但在这段清闲的日子还是想着自己也弄个Blog打发一下时间。随便在网上搜索了一下，决定了用GitHub + Hexo搭建个人博客，之后顺藤摸瓜从那位老师的GitHub对应仓库找到那款 <del>“性冷淡”</del> 简约风格主题——NexT。  </p><a id="more"></a>
+<p>写这篇的原因一是为了记录，但其实类似的教程多不胜数，我自己也看了许多人写的搭建过程，都是大同小异。所以这里只记录最最基本的流程以及少数自己用到的个性化操作，后续有增加的话再来修改这一篇或者另写就行了。写这篇的另一个原因就是熟悉一下Markdown语法，还是多有趣的一件事:)  </p>
+<p><strong>Hexo</strong>: <a href="https://hexo.io" target="_blank" rel="noopener">https://hexo.io</a><br><strong>Markdown Doc</strong>(Simple Chinese): <a href="https://markdown-zh.readthedocs.io/en/latest/" target="_blank" rel="noopener">https://markdown-zh.readthedocs.io/en/latest/</a>  </p>
+<h2 id="Preinstallation"><a href="#Preinstallation" class="headerlink" title="Preinstallation"></a>Preinstallation</h2><ul>
+<li>install Node.js <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a></li>
+<li>install git <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">https://git-scm.com/download/win</a></li>
+<li>install hexo(<em>Bash</em> recommended) <code>$npm install hexo-cli -g</code></li>
+</ul>
+<h2 id="SSH-keys"><a href="#SSH-keys" class="headerlink" title="SSH keys"></a>SSH keys</h2><ul>
+<li>git bash <code>$ cd ~/. ssh</code> to check exisiting ssh keys, if <strong><em>‘No such file or directory’</em></strong> , then<br><code>ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</code> to generate key file.  </li>
+<li><code>$ cat ~/.ssh/id_rsa.pub</code> and copy the content in the key file.  </li>
+<li>create key in GitHub: account Settings-&gt;SSH and GPG keys-&gt;New SSH keys.  </li>
+<li>check the SSH key <code>$ ssh -T git@github.com #do not modify the address</code> and <strong><em>‘Hi MatthewXY01! You’ve successfully authenticated, but GitHub does not provide shell access.’</em></strong> represents successful configuration.  </li>
+</ul>
+<h2 id="Initialization"><a href="#Initialization" class="headerlink" title="Initialization"></a>Initialization</h2><ul>
+<li>create an empty folder called <em>hexo</em> (whatever) <em>eg.</em> ‘M:\hexo’  </li>
+<li><em>git bash here</em> and  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo init  <span class="comment">#hexo会自动下载一些文件到这个目录，包括node_modules</span></span><br><span class="line">$ hexo g     <span class="comment">#或者 hexo generate 生成文件</span></span><br><span class="line">$ hexo s     <span class="comment">#或者 hexo server 启动服务，之后hexo 在public 生成相关html，可通过local test 查看本地预览</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>local test: <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>  </p>
+<h2 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h2><ul>
+<li>install deployer: git bash <code>npm install hexo-deployer-git --save</code></li>
+<li>in <strong>hexo</strong> folder, modify the <strong>_config.yml</strong> file as follows:<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">        type:</span> <span class="string">git</span>  </span><br><span class="line"><span class="attr">        repository:</span> <span class="string">git@github.com:MatthewXY01/MatthewXY01.github.io.git</span> <span class="comment">#SSH address</span></span><br><span class="line"><span class="attr">        branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<img src="/2019/10/09/GitHub-Hexo-for-Personal-Blog/SSH_address.png" title="SSH_address">  
+<ul>
+<li>type <code>$ hexo g</code> and <code>$ hexo d</code> or type <code>$ hexo d -g</code></li>
+</ul>
+<h2 id="Theme—NexT"><a href="#Theme—NexT" class="headerlink" title="Theme—NexT"></a>Theme—<em>NexT</em></h2><ul>
+<li><p>the simplest way to install is to clone the entire repository:  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd hexo  </span><br><span class="line">$ git clone https://github.com/theme-next/hexo-theme-next themes/next-reloaded</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>config the theme in the file ‘/themes/next-reloaded/_config.yml’. (many subsequent modifications are made here!)</p>
+</li>
+</ul>
+<h2 id="Local-search"><a href="#Local-search" class="headerlink" title="Local search"></a>Local search</h2><ul>
+<li><code>$npm install hexo-generator-searchdb --save</code></li>
+<li>in the theme _config.yml, set <em>local_search: enable: true</em>. paste the following lines anywhere:  <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line"><span class="attr">  path:</span> <span class="string">search.xml</span></span><br><span class="line"><span class="attr">  field:</span> <span class="string">post</span> <span class="comment">#post, page, all</span></span><br><span class="line"><span class="attr">  format:</span> <span class="string">html</span></span><br><span class="line"><span class="attr">  limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="Social-links"><a href="#Social-links" class="headerlink" title="Social links"></a>Social links</h2><ul>
+<li>int the theme _config.yml, set as follow:  <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line"><span class="attr">  GitHub:</span> <span class="attr">https://github.com/MatthewXY01</span> <span class="string">||</span> <span class="string">github</span></span><br><span class="line"><span class="attr">  E-Mail:</span> <span class="attr">mailto:mxinyuan@foxmail.com</span> <span class="string">||</span> <span class="string">envelope</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="Menu"><a href="#Menu" class="headerlink" title="Menu"></a>Menu</h2><h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2>]]></content>
       <categories>
         <category>Network</category>
       </categories>
@@ -15,8 +64,21 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F10%2F07%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title>Hello World</title>
+    <url>/2019/10/07/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><a id="more"></a>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
   </entry>
 </search>
