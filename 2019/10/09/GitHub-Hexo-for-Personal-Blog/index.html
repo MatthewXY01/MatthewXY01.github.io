@@ -68,7 +68,7 @@
 <meta property="og:description" content="前言几个月前准备保研，在网上搜索老师信息时，进了一位老师的个人博客，当时有被“性冷淡”的博客界面风格吸引到（后来发现还是有挺多用这个主题的…）。保研去向尘埃落定，虽然最后没有跟随那位“博主”老师（因为压根就没有回我邮件2333，故事还没开始就结束了），但在这段清闲的日子还是想着自己也弄个Blog打发一下时间。随便在网上搜索了一下，决定了用GitHub + Hexo搭建个人博客，之后顺藤摸瓜从那位老">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2019/10/09/GitHub-Hexo-for-Personal-Blog/SSH_address.png">
-<meta property="og:updated_time" content="2019-10-09T19:54:35.624Z">
+<meta property="og:updated_time" content="2019-10-10T07:57:27.989Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub+Hexo for Personal Blog">
 <meta name="twitter:description" content="前言几个月前准备保研，在网上搜索老师信息时，进了一位老师的个人博客，当时有被“性冷淡”的博客界面风格吸引到（后来发现还是有挺多用这个主题的…）。保研去向尘埃落定，虽然最后没有跟随那位“博主”老师（因为压根就没有回我邮件2333，故事还没开始就结束了），但在这段清闲的日子还是想着自己也弄个Blog打发一下时间。随便在网上搜索了一下，决定了用GitHub + Hexo搭建个人博客，之后顺藤摸瓜从那位老">
@@ -289,7 +289,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-10 03:54:35" itemprop="dateModified" datetime="2019-10-10T03:54:35+08:00">2019-10-10</time>
+                <time title="Modified: 2019-10-10 15:57:27" itemprop="dateModified" datetime="2019-10-10T15:57:27+08:00">2019-10-10</time>
               </span>
             
           
@@ -353,21 +353,45 @@
 <li><p>the simplest way to install is to clone the entire repository:  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd hexo  </span><br><span class="line">$ git clone https://github.com/theme-next/hexo-theme-next themes/next-reloaded</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>config the theme in the file ‘/themes/next-reloaded/_config.yml’. (many subsequent modifications are made here!)</p>
+<li><p>in the <strong>site</strong> _config.yml(/_config.yml), set <em>‘theme: next-reloaded’</em></p>
+</li>
+<li><p>config the <strong>theme</strong> _config.yml in the file ‘/themes/next-reloaded/_config.yml’. (many subsequent modifications are made here!)</p>
 </li>
 </ul>
-<h2 id="Local-search"><a href="#Local-search" class="headerlink" title="Local search"></a>Local search</h2><ul>
+<h3 id="Scheme"><a href="#Scheme" class="headerlink" title="Scheme"></a>Scheme</h3><ul>
+<li>in the <strong>theme</strong> _config.yml, set <em>‘scheme: Mist’</em>  </li>
+</ul>
+<h3 id="Local-search"><a href="#Local-search" class="headerlink" title="Local search"></a>Local search</h3><ul>
 <li><code>$npm install hexo-generator-searchdb --save</code></li>
-<li>in the theme _config.yml, set <em>local_search: enable: true</em>. paste the following lines anywhere:  <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line"><span class="attr">  path:</span> <span class="string">search.xml</span></span><br><span class="line"><span class="attr">  field:</span> <span class="string">post</span> <span class="comment">#post, page, all</span></span><br><span class="line"><span class="attr">  format:</span> <span class="string">html</span></span><br><span class="line"><span class="attr">  limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<li>in the <strong>theme</strong> _config.yml, set <em>‘local_search: enable: true’</em></li>
+<li>in the <strong>site</strong> _config.yml, paste the following lines anywhere:  <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line"><span class="attr">  path:</span> <span class="string">search.xml</span></span><br><span class="line"><span class="attr">  field:</span> <span class="string">post</span> <span class="comment">#search range, can be 'post', 'page', 'all'</span></span><br><span class="line"><span class="attr">  format:</span> <span class="string">html</span></span><br><span class="line"><span class="attr">  limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h2 id="Social-links"><a href="#Social-links" class="headerlink" title="Social links"></a>Social links</h2><ul>
-<li>int the theme _config.yml, set as follow:  <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line"><span class="attr">  GitHub:</span> <span class="attr">https://github.com/MatthewXY01</span> <span class="string">||</span> <span class="string">github</span></span><br><span class="line"><span class="attr">  E-Mail:</span> <span class="attr">mailto:mxinyuan@foxmail.com</span> <span class="string">||</span> <span class="string">envelope</span></span><br></pre></td></tr></table></figure>
+<h3 id="Social-links"><a href="#Social-links" class="headerlink" title="Social links"></a>Social links</h3><ul>
+<li>in the <strong>theme</strong> _config.yml, set as follow:  <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line"><span class="attr">  GitHub:</span> <span class="attr">https://github.com/MatthewXY01</span> <span class="string">||</span> <span class="string">github</span></span><br><span class="line"><span class="attr">  E-Mail:</span> <span class="attr">mailto:mxinyuan@foxmail.com</span> <span class="string">||</span> <span class="string">envelope</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h2 id="Menu"><a href="#Menu" class="headerlink" title="Menu"></a>Menu</h2><h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2>
+<h3 id="Menu"><a href="#Menu" class="headerlink" title="Menu"></a>Menu</h3><ul>
+<li><p>in the <strong>theme</strong> _config.yml, search <em>‘menu’</em> and set as follow:  </p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line"><span class="attr">  home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line"><span class="attr">  tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">  categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span></span><br><span class="line"><span class="attr">  archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>create new pages and link to the menu <code>$ hexo new page categories</code></p>
+</li>
+<li><p>edit the ‘/source/categories/index.md’ file of the page just created. add <em>‘type: categories’</em> </p>
+</li>
+<li><p>similar method for the creation of the ‘tags’ page</p>
+</li>
+</ul>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><h3 id="YMAL"><a href="#YMAL" class="headerlink" title="YMAL"></a>YMAL</h3><ul>
+<li>case sensitive</li>
+<li>in ‘key-value pair’, do not ignore a space after the colon</li>
+</ul>
+<h3 id="Markdown-representation"><a href="#Markdown-representation" class="headerlink" title="Markdown representation"></a>Markdown representation</h3><ul>
+<li>If something is wrong with the representation and hard to tune, you can try deleting extra spaces or adopting an alternative format<br>e.g. code block in  format:<br>```<br>code<br>```<br>some representation error occurs when there’s extra space following the last “```“ </li>
+</ul>
+
     </div>
 
     
@@ -452,7 +476,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Preinstallation"><span class="nav-number">2.</span> <span class="nav-text">Preinstallation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-keys"><span class="nav-number">3.</span> <span class="nav-text">SSH keys</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Initialization"><span class="nav-number">4.</span> <span class="nav-text">Initialization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deploy"><span class="nav-number">5.</span> <span class="nav-text">Deploy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Theme—NexT"><span class="nav-number">6.</span> <span class="nav-text">Theme—NexT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Local-search"><span class="nav-number">7.</span> <span class="nav-text">Local search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Social-links"><span class="nav-number">8.</span> <span class="nav-text">Social links</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Menu"><span class="nav-number">9.</span> <span class="nav-text">Menu</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">10.</span> <span class="nav-text">Tips</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Preinstallation"><span class="nav-number">2.</span> <span class="nav-text">Preinstallation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-keys"><span class="nav-number">3.</span> <span class="nav-text">SSH keys</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Initialization"><span class="nav-number">4.</span> <span class="nav-text">Initialization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deploy"><span class="nav-number">5.</span> <span class="nav-text">Deploy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Theme—NexT"><span class="nav-number">6.</span> <span class="nav-text">Theme—NexT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Scheme"><span class="nav-number">6.1.</span> <span class="nav-text">Scheme</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Local-search"><span class="nav-number">6.2.</span> <span class="nav-text">Local search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Social-links"><span class="nav-number">6.3.</span> <span class="nav-text">Social links</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Menu"><span class="nav-number">6.4.</span> <span class="nav-text">Menu</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">7.</span> <span class="nav-text">Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#YMAL"><span class="nav-number">7.1.</span> <span class="nav-text">YMAL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Markdown-representation"><span class="nav-number">7.2.</span> <span class="nav-text">Markdown representation</span></a></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
