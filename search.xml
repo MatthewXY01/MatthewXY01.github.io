@@ -76,6 +76,11 @@
 <h3 id="Markdown-representation"><a href="#Markdown-representation" class="headerlink" title="Markdown representation"></a>Markdown representation</h3><ul>
 <li>If something is wrong with the representation and hard to tune, you can try deleting extra spaces or adopting an alternative format<br>e.g. code block in  format:<br>```<br>code<br>```<br>some representation error occurs when there’s extra space following the last “```“ </li>
 </ul>
+<h3 id="404"><a href="#404" class="headerlink" title="404"></a>404</h3><p>case sensitive: sometimes you switch between capital letter and small letter, which may lead to 404 not found errors  </p>
+<ul>
+<li>set <code>ignorecase</code> as false in the file <em>‘.deploy_git/.git/config’</em></li>
+<li><code>$ hexo clean</code> and <code>$ hexo d -g</code></li>
+</ul>
 ]]></content>
       <categories>
         <category>Network</category>
