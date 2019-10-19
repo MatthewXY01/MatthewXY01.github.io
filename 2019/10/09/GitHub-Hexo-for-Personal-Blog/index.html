@@ -68,7 +68,7 @@
 <meta property="og:description" content="前言几个月前准备保研，在网上搜索老师信息时，进了一位老师的个人博客，当时有被“性冷淡”的博客界面风格吸引到（后来发现还是有挺多用这个主题的…）。保研去向尘埃落定，虽然最后没有跟随那位“博主”老师（因为压根就没有回我邮件2333，故事还没开始就结束了），但在这段清闲的日子还是想着自己也弄个Blog打发一下时间。随便在网上搜索了一下，决定了用GitHub + Hexo搭建个人博客，之后顺藤摸瓜从那位老">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2019/10/09/GitHub-Hexo-for-Personal-Blog/SSH_address.png">
-<meta property="og:updated_time" content="2019-10-10T11:46:35.132Z">
+<meta property="og:updated_time" content="2019-10-19T07:27:07.364Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub+Hexo for Personal Blog">
 <meta name="twitter:description" content="前言几个月前准备保研，在网上搜索老师信息时，进了一位老师的个人博客，当时有被“性冷淡”的博客界面风格吸引到（后来发现还是有挺多用这个主题的…）。保研去向尘埃落定，虽然最后没有跟随那位“博主”老师（因为压根就没有回我邮件2333，故事还没开始就结束了），但在这段清闲的日子还是想着自己也弄个Blog打发一下时间。随便在网上搜索了一下，决定了用GitHub + Hexo搭建个人博客，之后顺藤摸瓜从那位老">
@@ -289,7 +289,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-10 19:46:35" itemprop="dateModified" datetime="2019-10-10T19:46:35+08:00">2019-10-10</time>
+                <time title="Modified: 2019-10-19 15:27:07" itemprop="dateModified" datetime="2019-10-19T15:27:07+08:00">2019-10-19</time>
               </span>
             
           
@@ -382,6 +382,21 @@
 <li><p>edit the ‘/source/categories/index.md’ file of the page just created. add <em>‘type: categories’</em> </p>
 </li>
 <li><p>similar method for the creation of the ‘tags’ page</p>
+</li>
+</ul>
+<h2 id="Posts"><a href="#Posts" class="headerlink" title="Posts"></a>Posts</h2><h3 id="Create-a-new-article"><a href="#Create-a-new-article" class="headerlink" title="Create a new article"></a>Create a new article</h3><ul>
+<li><p>in the <strong>theme</strong> _config.yml, modify <em>‘auto_excerpt’</em>, sothat home page shows only the excerpt and click <em>Read more</em> to read the full article :  </p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">auto_excerpt:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  length:</span> <span class="number">150</span> <span class="comment">#length of the excerpt</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>in the <strong>site</strong> _config.yml, set <em>‘post_asset_folder’</em> to <em>‘true’</em>, sothat every time we create  new posts, it will automatically generates folders with the same name(Used to store audio and video resources)  </p>
+</li>
+<li><p>in <strong>hexo</strong> folder git bash here and enter the command <em>hexo new ‘postname’</em>  </p>
+</li>
+</ul>
+<h3 id="Tags-and-category"><a href="#Tags-and-category" class="headerlink" title="Tags and category"></a>Tags and category</h3><ul>
+<li>open ‘/source/_posts/postname.md’</li>
+<li>in the beginning of the post, set tags and categoty: <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">categories:</span> <span class="string">categoty_example</span></span><br><span class="line"><span class="attr">tags:</span> <span class="comment">#multi-tag is available</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">tag1</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">tag2</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">tag3</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">...</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><h3 id="YMAL"><a href="#YMAL" class="headerlink" title="YMAL"></a>YMAL</h3><ul>
@@ -481,7 +496,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Preinstallation"><span class="nav-number">2.</span> <span class="nav-text">Preinstallation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-keys"><span class="nav-number">3.</span> <span class="nav-text">SSH keys</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Initialization"><span class="nav-number">4.</span> <span class="nav-text">Initialization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deploy"><span class="nav-number">5.</span> <span class="nav-text">Deploy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Theme—NexT"><span class="nav-number">6.</span> <span class="nav-text">Theme—NexT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Scheme"><span class="nav-number">6.1.</span> <span class="nav-text">Scheme</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Local-search"><span class="nav-number">6.2.</span> <span class="nav-text">Local search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Social-links"><span class="nav-number">6.3.</span> <span class="nav-text">Social links</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Menu"><span class="nav-number">6.4.</span> <span class="nav-text">Menu</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">7.</span> <span class="nav-text">Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#YMAL"><span class="nav-number">7.1.</span> <span class="nav-text">YMAL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Markdown-representation"><span class="nav-number">7.2.</span> <span class="nav-text">Markdown representation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#404"><span class="nav-number">7.3.</span> <span class="nav-text">404</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Preinstallation"><span class="nav-number">2.</span> <span class="nav-text">Preinstallation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-keys"><span class="nav-number">3.</span> <span class="nav-text">SSH keys</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Initialization"><span class="nav-number">4.</span> <span class="nav-text">Initialization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deploy"><span class="nav-number">5.</span> <span class="nav-text">Deploy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Theme—NexT"><span class="nav-number">6.</span> <span class="nav-text">Theme—NexT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Scheme"><span class="nav-number">6.1.</span> <span class="nav-text">Scheme</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Local-search"><span class="nav-number">6.2.</span> <span class="nav-text">Local search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Social-links"><span class="nav-number">6.3.</span> <span class="nav-text">Social links</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Menu"><span class="nav-number">6.4.</span> <span class="nav-text">Menu</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Posts"><span class="nav-number">7.</span> <span class="nav-text">Posts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-article"><span class="nav-number">7.1.</span> <span class="nav-text">Create a new article</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tags-and-category"><span class="nav-number">7.2.</span> <span class="nav-text">Tags and category</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">8.</span> <span class="nav-text">Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#YMAL"><span class="nav-number">8.1.</span> <span class="nav-text">YMAL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Markdown-representation"><span class="nav-number">8.2.</span> <span class="nav-text">Markdown representation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#404"><span class="nav-number">8.3.</span> <span class="nav-text">404</span></a></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
