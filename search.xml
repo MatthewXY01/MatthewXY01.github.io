@@ -72,6 +72,9 @@
 </ol>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/" target="_blank" rel="noopener">Attention in Long Short-Term Memory Recurrent Neural Networks</a><br><a href="https://www.zhihu.com/question/68482809/answer/264632289" target="_blank" rel="noopener">目前主流的attention方法都有哪些</a></p>
 ]]></content>
+      <categories>
+        <category>Deep learning</category>
+      </categories>
       <tags>
         <tag>attention mechanism</tag>
         <tag>RNN</tag>
