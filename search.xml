@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Back up Hexo blog source files with GitHub branch</title>
+    <url>/2019/10/24/Back-up-Hexo-blog-source-files-with-GitHub-branch/</url>
+    <content><![CDATA[<h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h2><p>It’s easy to deploy blog by Hexo. However the <code>hexo d -g</code> command can only push <code>.deploy_git</code> folder’s content to the repo. Just in case the computer is broken or we’re going to write a blog on another computer, it’s necessary to back up the blog’s source files in another place. We can use a new branch of the blog repo to achieve that.(note that the default branch <code>master</code> is used for Hexo to deploy static website files).  </p><a id="more"></a>
+<h2 id="Before-pushing"><a href="#Before-pushing" class="headerlink" title="Before pushing"></a>Before pushing</h2><ol>
+<li>enter the blog directory(eg. /hexo ) <code>git init</code>  </li>
+<li><code>git add .</code> Hexo has already made a <code>.gitignore</code> file, edit it as needded  </li>
+<li><code>git commit -m &quot;commit first time&quot;</code>  </li>
+<li><code>git remote add origin git@github.com:MatthewXY01/MatthewXY01.github.io.git</code>  </li>
+</ol>
+<h2 id="Push-source-files-to-the-new-branch"><a href="#Push-source-files-to-the-new-branch" class="headerlink" title="Push source files to the new branch"></a>Push source files to the new branch</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch <span class="built_in">source</span> <span class="comment">#新建分支 source</span></span><br><span class="line">git branch <span class="comment">#查看分支</span></span><br><span class="line">git checkout <span class="built_in">source</span> <span class="comment">#切换分支</span></span><br></pre></td></tr></table></figure>
+
+<p>Then, pull codes(which we just commit) and push them in the new branch:  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git pull origin master</span><br><span class="line">git push -u origin <span class="built_in">source</span></span><br></pre></td></tr></table></figure>
+
+<p>And we can find the source files in the new branch of the repo.  </p>
+<h2 id="Update-blog"><a href="#Update-blog" class="headerlink" title="Update blog"></a>Update blog</h2><p>Every time we modify source files (eg. new posts, new configuration in _config.yml etc.), we can push them to the new branch:  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">'modify blog'</span>  </span><br><span class="line">git push --<span class="built_in">set</span>-upstreams origin <span class="built_in">source</span> <span class="comment"># configure 'push', this command only needs to be executed once</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<h2 id="Edit-source-files-in-another-computer"><a href="#Edit-source-files-in-another-computer" class="headerlink" title="Edit source files in another computer"></a>Edit source files in another computer</h2><ol>
+<li>refer the part <strong>Preinstallation</strong> and <strong>SSH keys</strong> in <a href="https://matthewxy01.github.io/2019/10/09/GitHub-Hexo-for-Personal-Blog/#more" target="_blank" rel="noopener">GitHub+Hexo for Personal Blog</a>  </li>
+<li>clone the repo</li>
+<li><code>git checkout origin/source</code></li>
+<li>enter the blog directory and <code>npm install hexo-deployer-git --save</code></li>
+<li>write blogs</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>GitHub</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Attention Mechanism</title>
     <url>/2019/10/23/Attention-Mechanism/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>第一次听说<strong>Attention</strong>机制是在音视频处理课上，在视觉问答领域中有用到 <strong>Attention based model</strong> 后来在学习Matching Network的时候又一次接触到了。查询一些资料，做点总结和记录。  </p><h2 id="人类的注意力机制"><a href="#人类的注意力机制" class="headerlink" title="人类的注意力机制"></a>人类的注意力机制</h2><p>人类在感知东西的时候，一般不会是一个场景从到头看到尾每次全部都看，而往往是根据需求观察注意特定的一部分。观察一幅画面，重点看颜色鲜艳的部分；看一篇文章，先看大字标题和开头几句；听英语听力，在提问前的引导语句结束后开始全神贯注。我们对信息本身分配了不同程度的专注度。<br>观察许多流行的深度学习模型，很多创新点都是“从人的角度出发”被提出。这一点感觉很像仿生学（鲨鱼皮泳衣、蝙蝠和雷达等等）。’Attention’本身就是个很human-like的词，深度学习中的<strong>Attention mechanism</strong> 也是从人类视觉注意力机制中获得灵感。  </p><a id="more"></a>

@@ -59,18 +59,19 @@
   };
 </script>
 
-  <meta name="description" content="不忘初心 野蛮生长">
-<meta name="keywords" content="MXY, MatthewXY, Hexo, NexT">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MXY&#39;s BLOG">
-<meta property="og:url" content="http://yoursite.com/tags/Hexo/index.html">
+  <meta name="description" content="GoalIt’s easy to deploy blog by Hexo. However the hexo d -g command can only push .deploy_git folder’s content to the repo. Just in case the computer is broken or we’re going to write a blog on anothe">
+<meta name="keywords" content="GitHub,Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Back up Hexo blog source files with GitHub branch">
+<meta property="og:url" content="http://yoursite.com/2019/10/24/Back-up-Hexo-blog-source-files-with-GitHub-branch/index.html">
 <meta property="og:site_name" content="MXY&#39;s BLOG">
-<meta property="og:description" content="不忘初心 野蛮生长">
+<meta property="og:description" content="GoalIt’s easy to deploy blog by Hexo. However the hexo d -g command can only push .deploy_git folder’s content to the repo. Just in case the computer is broken or we’re going to write a blog on anothe">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-24T08:23:42.794Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MXY&#39;s BLOG">
-<meta name="twitter:description" content="不忘初心 野蛮生长">
-  <link rel="canonical" href="http://yoursite.com/tags/Hexo/">
+<meta name="twitter:title" content="Back up Hexo blog source files with GitHub branch">
+<meta name="twitter:description" content="GoalIt’s easy to deploy blog by Hexo. However the hexo d -g command can only push .deploy_git folder’s content to the repo. Just in case the computer is broken or we’re going to write a blog on anothe">
+  <link rel="canonical" href="http://yoursite.com/2019/10/24/Back-up-Hexo-blog-source-files-with-GitHub-branch/">
 
 
 <script id="page-configurations">
@@ -78,13 +79,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Tag: Hexo | MXY's BLOG</title>
+  <title>Back up Hexo blog source files with GitHub branch | MXY's BLOG</title>
   
 
 
@@ -204,21 +205,6 @@
 
     
 
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-  
-
 </nav>
   <div class="site-search">
     <div class="popup search-popup">
@@ -257,89 +243,142 @@
           <div id="content" class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">Hexo<small>Tag</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/24/Back-up-Hexo-blog-source-files-with-GitHub-branch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinyuan Miao">
+      <meta itemprop="description" content="不忘初心 野蛮生长">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MXY's BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Back up Hexo blog source files with GitHub branch
+
+          
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-10-24 16:18:21 / Modified: 16:23:42" itemprop="dateCreated datePublished" datetime="2019-10-24T16:18:21+08:00">2019-10-24</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+        <h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h2><p>It’s easy to deploy blog by Hexo. However the <code>hexo d -g</code> command can only push <code>.deploy_git</code> folder’s content to the repo. Just in case the computer is broken or we’re going to write a blog on another computer, it’s necessary to back up the blog’s source files in another place. We can use a new branch of the blog repo to achieve that.(note that the default branch <code>master</code> is used for Hexo to deploy static website files).  </p><a id="more"></a>
+<h2 id="Before-pushing"><a href="#Before-pushing" class="headerlink" title="Before pushing"></a>Before pushing</h2><ol>
+<li>enter the blog directory(eg. /hexo ) <code>git init</code>  </li>
+<li><code>git add .</code> Hexo has already made a <code>.gitignore</code> file, edit it as needded  </li>
+<li><code>git commit -m &quot;commit first time&quot;</code>  </li>
+<li><code>git remote add origin git@github.com:MatthewXY01/MatthewXY01.github.io.git</code>  </li>
+</ol>
+<h2 id="Push-source-files-to-the-new-branch"><a href="#Push-source-files-to-the-new-branch" class="headerlink" title="Push source files to the new branch"></a>Push source files to the new branch</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch <span class="built_in">source</span> <span class="comment">#新建分支 source</span></span><br><span class="line">git branch <span class="comment">#查看分支</span></span><br><span class="line">git checkout <span class="built_in">source</span> <span class="comment">#切换分支</span></span><br></pre></td></tr></table></figure>
 
-  
-  
+<p>Then, pull codes(which we just commit) and push them in the new branch:  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master</span><br><span class="line">git push -u origin <span class="built_in">source</span></span><br></pre></td></tr></table></figure>
 
-  
+<p>And we can find the source files in the new branch of the repo.  </p>
+<h2 id="Update-blog"><a href="#Update-blog" class="headerlink" title="Update blog"></a>Update blog</h2><p>Every time we modify source files (eg. new posts, new configuration in _config.yml etc.), we can push them to the new branch:  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">'modify blog'</span>  </span><br><span class="line">git push --<span class="built_in">set</span>-upstreams origin <span class="built_in">source</span> <span class="comment"># configure 'push', this command only needs to be executed once</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<h2 id="Edit-source-files-in-another-computer"><a href="#Edit-source-files-in-another-computer" class="headerlink" title="Edit source files in another computer"></a>Edit source files in another computer</h2><ol>
+<li>refer the part <strong>Preinstallation</strong> and <strong>SSH keys</strong> in <a href="https://matthewxy01.github.io/2019/10/09/GitHub-Hexo-for-Personal-Blog/#more" target="_blank" rel="noopener">GitHub+Hexo for Personal Blog</a>  </li>
+<li>clone the repo</li>
+<li><code>git checkout origin/source</code></li>
+<li>enter the blog directory and <code>npm install hexo-deployer-git --save</code></li>
+<li>write blogs</li>
+</ol>
+
+    </div>
+
     
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
-    </div>
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-24T16:18:21+08:00"
-              content="2019-10-24">
-          10-24
-        </time>
-      </div>
-
-      <h2 class="post-title">
+    
+    
         
-          <a class="post-title-link" href="/2019/10/24/Back-up-Hexo-blog-source-files-with-GitHub-branch/" itemprop="url">
-            <span itemprop="name">Back up Hexo blog source files with GitHub branch</span>
-          </a>
-        
-      </h2>
+      
 
-    </header>
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+            
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/10/23/Attention-Mechanism/" rel="next" title="Attention Mechanism">
+                  <i class="fa fa-chevron-left"></i> Attention Mechanism
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
   </article>
-
-
-
+  
   
   
 
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-09T00:37:38+08:00"
-              content="2019-10-09">
-          10-09
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/10/09/GitHub-Hexo-for-Personal-Blog/" itemprop="url">
-            <span itemprop="name">GitHub+Hexo for Personal Blog</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
-    </div>
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
@@ -356,6 +395,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -368,6 +412,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Goal"><span class="nav-number">1.</span> <span class="nav-text">Goal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Before-pushing"><span class="nav-number">2.</span> <span class="nav-text">Before pushing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Push-source-files-to-the-new-branch"><span class="nav-number">3.</span> <span class="nav-text">Push source files to the new branch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Update-blog"><span class="nav-number">4.</span> <span class="nav-text">Update blog</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Edit-source-files-in-another-computer"><span class="nav-number">5.</span> <span class="nav-text">Edit source files in another computer</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
