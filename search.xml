@@ -90,6 +90,7 @@
 <li>install Node.js <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a></li>
 <li>install git <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">https://git-scm.com/download/win</a></li>
 <li>install hexo(<em>Bash</em> recommended) <code>$npm install hexo-cli -g</code></li>
+<li>create a new repository with the name <strong>“‘Account Name’.github.io”</strong></li>
 </ul>
 <h2 id="SSH-keys"><a href="#SSH-keys" class="headerlink" title="SSH keys"></a>SSH keys</h2><ul>
 <li>git bash <code>$ cd ~/. ssh</code> to check exisiting ssh keys, if <strong><em>‘No such file or directory’</em></strong> , then<br><code>ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</code> to generate key file  </li>
