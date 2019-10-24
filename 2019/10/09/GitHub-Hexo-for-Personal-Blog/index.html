@@ -11,7 +11,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
+<meta name="generator" content="Hexo 4.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
@@ -63,16 +63,14 @@
 <meta name="keywords" content="GitHub,Hexo,Markdown,NexT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GitHub+Hexo for Personal Blog">
-<meta property="og:url" content="http://yoursite.com/2019/10/09/GitHub-Hexo-for-Personal-Blog/index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;09&#x2F;GitHub-Hexo-for-Personal-Blog&#x2F;index.html">
 <meta property="og:site_name" content="MXY&#39;s BLOG">
 <meta property="og:description" content="前言几个月前准备保研，在网上搜索老师信息时，进了一位老师的个人博客，当时有被“性冷淡”的博客界面风格吸引到（后来发现还是有挺多用这个主题的…）。保研去向尘埃落定，虽然最后没有跟随那位“博主”老师（因为压根就没有回我邮件2333，故事还没开始就结束了），但在这段清闲的日子还是想着自己也弄个Blog打发一下时间。随便在网上搜索了一下，决定了用GitHub + Hexo搭建个人博客，之后顺藤摸瓜从那位老">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2019/10/09/GitHub-Hexo-for-Personal-Blog/SSH_address.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;09&#x2F;GitHub-Hexo-for-Personal-Blog&#x2F;SSH_address.png">
 <meta property="og:updated_time" content="2019-10-24T06:55:17.453Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GitHub+Hexo for Personal Blog">
-<meta name="twitter:description" content="前言几个月前准备保研，在网上搜索老师信息时，进了一位老师的个人博客，当时有被“性冷淡”的博客界面风格吸引到（后来发现还是有挺多用这个主题的…）。保研去向尘埃落定，虽然最后没有跟随那位“博主”老师（因为压根就没有回我邮件2333，故事还没开始就结束了），但在这段清闲的日子还是想着自己也弄个Blog打发一下时间。随便在网上搜索了一下，决定了用GitHub + Hexo搭建个人博客，之后顺藤摸瓜从那位老">
-<meta name="twitter:image" content="http://yoursite.com/2019/10/09/GitHub-Hexo-for-Personal-Blog/SSH_address.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;09&#x2F;GitHub-Hexo-for-Personal-Blog&#x2F;SSH_address.png">
   <link rel="canonical" href="http://yoursite.com/2019/10/09/GitHub-Hexo-for-Personal-Blog/">
 
 
@@ -198,7 +196,7 @@
 
   </li>
       <li class="menu-item menu-item-search">
-        <a href="javascript:;" class="popup-trigger">
+        <a href="javascript:;" target="_blank" rel="noopener" class="popup-trigger">
         
           <i class="fa fa-search fa-fw"></i>Search</a>
       </li>
@@ -336,28 +334,18 @@
 <h2 id="Initialization"><a href="#Initialization" class="headerlink" title="Initialization"></a>Initialization</h2><ul>
 <li>create an empty folder called <em>hexo</em> (whatever) <em>eg.</em> ‘M:\hexo’  </li>
 <li><em>git bash here</em> and  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init  <span class="comment">#hexo会自动下载一些文件到这个目录，包括node_modules</span></span><br><span class="line">$ hexo g     <span class="comment">#或者 hexo generate 生成文件</span></span><br><span class="line">$ hexo s     <span class="comment">#或者 hexo server 启动服务，之后hexo 在public 生成相关html，可通过local test 查看本地预览</span></span><br></pre></td></tr></table></figure>
-
-</li>
+local test: <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>  </li>
 </ul>
-<p>local test: <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>  </p>
 <h2 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h2><ul>
 <li>install deployer: git bash <code>npm install hexo-deployer-git --save</code></li>
 <li>in <strong>hexo</strong> folder, modify the <strong>_config.yml</strong> file as follows:<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">        type:</span> <span class="string">git</span>  </span><br><span class="line"><span class="attr">        repository:</span> <span class="string">git@github.com:MatthewXY01/MatthewXY01.github.io.git</span> <span class="comment">#SSH address</span></span><br><span class="line"><span class="attr">        branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<img src="/2019/10/09/GitHub-Hexo-for-Personal-Blog/SSH_address.png" title="SSH_address">  
-<ul>
+<img src="/2019/10/09/GitHub-Hexo-for-Personal-Blog/SSH_address.png" class title="SSH_address">  </li>
 <li>type <code>$ hexo g</code> and <code>$ hexo d</code> or type <code>$ hexo d -g</code></li>
 </ul>
 <h2 id="Theme—NexT"><a href="#Theme—NexT" class="headerlink" title="Theme—NexT"></a>Theme—<em>NexT</em></h2><ul>
-<li><p>the simplest way to install is to clone the entire repository:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd hexo  </span><br><span class="line">$ git clone https://github.com/theme-next/hexo-theme-next themes/next-reloaded</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>in the <strong>site</strong> _config.yml(/_config.yml), set <em>‘theme: next-reloaded’</em></p>
-</li>
-<li><p>config the <strong>theme</strong> _config.yml in the file ‘/themes/next-reloaded/_config.yml’. (many subsequent modifications are made here!)</p>
-</li>
+<li>the simplest way to install is to clone the entire repository:  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd hexo  </span><br><span class="line">$ git clone https://github.com/theme-next/hexo-theme-next themes/next-reloaded</span><br></pre></td></tr></table></figure></li>
+<li>in the <strong>site</strong> _config.yml(/_config.yml), set <em>‘theme: next-reloaded’</em></li>
+<li>config the <strong>theme</strong> _config.yml in the file ‘/themes/next-reloaded/_config.yml’. (many subsequent modifications are made here!)</li>
 </ul>
 <h3 id="Scheme"><a href="#Scheme" class="headerlink" title="Scheme"></a>Scheme</h3><ul>
 <li>in the <strong>theme</strong> _config.yml, set <em>‘scheme: Mist’</em>  </li>
@@ -375,24 +363,15 @@
 </li>
 </ul>
 <h3 id="Menu"><a href="#Menu" class="headerlink" title="Menu"></a>Menu</h3><ul>
-<li><p>in the <strong>theme</strong> _config.yml, search <em>‘menu’</em> and set as follow:  </p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line"><span class="attr">  home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line"><span class="attr">  tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">  categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span></span><br><span class="line"><span class="attr">  archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>create new pages and link to the menu <code>$ hexo new page categories</code></p>
-</li>
-<li><p>edit the ‘/source/categories/index.md’ file of the page just created. add <em>‘type: categories’</em> </p>
-</li>
-<li><p>similar method for the creation of the ‘tags’ page</p>
-</li>
+<li>in the <strong>theme</strong> _config.yml, search <em>‘menu’</em> and set as follow:  <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line"><span class="attr">  home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line"><span class="attr">  tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">  categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span></span><br><span class="line"><span class="attr">  archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span></span><br></pre></td></tr></table></figure></li>
+<li>create new pages and link to the menu <code>$ hexo new page categories</code></li>
+<li>edit the ‘/source/categories/index.md’ file of the page just created. add <em>‘type: categories’</em> </li>
+<li>similar method for the creation of the ‘tags’ page</li>
 </ul>
 <h2 id="Posts"><a href="#Posts" class="headerlink" title="Posts"></a>Posts</h2><h3 id="Create-a-new-article"><a href="#Create-a-new-article" class="headerlink" title="Create a new article"></a>Create a new article</h3><ul>
-<li><p>in the <strong>theme</strong> _config.yml, modify <em>‘auto_excerpt’</em>, sothat home page shows only the excerpt and click <em>Read more</em> to read the full article :  </p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">auto_excerpt:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  length:</span> <span class="number">150</span> <span class="comment">#length of the excerpt</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>in the <strong>site</strong> _config.yml, set <em>‘post_asset_folder’</em> to <em>‘true’</em>, sothat every time we create  new posts, it will automatically generates folders with the same name(Used to store audio and video resources)  </p>
-</li>
-<li><p>in <strong>hexo</strong> folder git bash here and enter the command <em>hexo new ‘postname’</em>  </p>
-</li>
+<li>in the <strong>theme</strong> _config.yml, modify <em>‘auto_excerpt’</em>, sothat home page shows only the excerpt and click <em>Read more</em> to read the full article :  <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">auto_excerpt:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  length:</span> <span class="number">150</span> <span class="comment">#length of the excerpt</span></span><br></pre></td></tr></table></figure></li>
+<li>in the <strong>site</strong> _config.yml, set <em>‘post_asset_folder’</em> to <em>‘true’</em>, sothat every time we create  new posts, it will automatically generates folders with the same name(Used to store audio and video resources)  </li>
+<li>in <strong>hexo</strong> folder git bash here and enter the command <em>hexo new ‘postname’</em>  </li>
 </ul>
 <h3 id="Tags-and-category"><a href="#Tags-and-category" class="headerlink" title="Tags and category"></a>Tags and category</h3><ul>
 <li>open ‘/source/_posts/postname.md’</li>
@@ -518,7 +497,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         
-          <a href="/archives/">
+          <a href="/archives/%20%7C%7C%20archive">
         
           <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
@@ -530,7 +509,7 @@
       <div class="site-state-item site-state-categories">
         
           
-            <a href="/categories/">
+            <a href="/categories/%20%7C%7C%20th">
           
         
         <span class="site-state-item-count">2</span>
@@ -543,7 +522,7 @@
       <div class="site-state-item site-state-tags">
         
           
-            <a href="/tags/">
+            <a href="/tags/%20%7C%7C%20tags">
           
         
         <span class="site-state-item-count">6</span>
@@ -562,7 +541,7 @@
       
         
       
-        <a href="https://github.com/MatthewXY01" title="GitHub &rarr; https://github.com/MatthewXY01" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/MatthewXY01" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;MatthewXY01" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
     
       <span class="links-of-author-item">
@@ -573,7 +552,7 @@
       
         
       
-        <a href="mailto:mxinyuan@foxmail.com" title="E-Mail &rarr; mailto:mxinyuan@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:mxinyuan@foxmail.com" title="E-Mail &amp;rarr; mailto:mxinyuan@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
   </div>
@@ -586,7 +565,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://tomstark827.github.io/" title="https://tomstark827.github.io/" rel="noopener" target="_blank">彤姐</a>
+          <a href="https://tomstark827.github.io/" title="https:&#x2F;&#x2F;tomstark827.github.io&#x2F;" rel="noopener" target="_blank">彤姐</a>
         </li>
       
     </ul>
@@ -610,9 +589,9 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Xinyuan Miao</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0</div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.1</div>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.1</div>
 
         
 
