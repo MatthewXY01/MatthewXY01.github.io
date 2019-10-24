@@ -22,6 +22,7 @@ tags:
 - install Node.js <https://nodejs.org/en/download/>
 - install git <https://git-scm.com/download/win>
 - install hexo(*Bash* recommended) `$npm install hexo-cli -g`
+- create a new repository with the name **"'Account Name'.github.io"**
 
 ## SSH keys
 -  git bash `$ cd ~/. ssh` to check exisiting ssh keys, if ***'No such file or directory'*** , then  
