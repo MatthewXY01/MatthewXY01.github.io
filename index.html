@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-
-
-
-
-
 <html lang="en">
 <head>
   <!-- -->
@@ -12,17 +7,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 4.0.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
-  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+<link rel="stylesheet" href="/css/main.css">
 
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
 <script id="hexo-configurations">
@@ -30,7 +23,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '7.4.1',
+    version: '7.4.2',
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
@@ -47,7 +40,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":"enable","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -68,7 +61,8 @@
 <meta property="og:description" content="不忘初心 野蛮生长">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-  <link rel="canonical" href="http://yoursite.com/">
+
+<link rel="canonical" href="http://yoursite.com/">
 
 
 <script id="page-configurations">
@@ -104,7 +98,6 @@
   .use-motion .post-body,
   .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -122,7 +115,7 @@
   <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-meta">
 
@@ -148,59 +141,31 @@
 <nav class="site-nav">
   
   <ul id="menu" class="menu">
-      
-      
-      
-        
         <li class="menu-item menu-item-home">
-      
-    
 
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-tags">
-      
-    
 
     <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-categories">
-      
-    
 
     <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
 
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-archives">
-      
-    
 
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a href="javascript:;" target="_blank" rel="noopener" class="popup-trigger">
-        
-          <i class="fa fa-search fa-fw"></i>Search</a>
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
       </li>
-    
   </ul>
-
-    
 
 </nav>
   <div class="site-search">
@@ -234,10 +199,12 @@
   </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content">
             
 
   <div class="posts-expand">
@@ -248,9 +215,9 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/24/Back-up-Hexo-blog-source-files-with-GitHub-branch/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.png">
       <meta itemprop="name" content="Xinyuan Miao">
       <meta itemprop="description" content="不忘初心 野蛮生长">
-      <meta itemprop="image" content="/uploads/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -258,9 +225,8 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/10/24/Back-up-Hexo-blog-source-files-with-GitHub-branch/" class="post-title-link" itemprop="url">Back up Hexo blog source files with GitHub branch</a>
           
+            <a href="/2019/10/24/Back-up-Hexo-blog-source-files-with-GitHub-branch/" class="post-title-link" itemprop="url">Back up Hexo blog source files with GitHub branch</a>
         </h1>
 
         <div class="post-meta">
@@ -269,31 +235,21 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-
-              
-                
               
 
               <time title="Created: 2019-10-24 16:18:21 / Modified: 16:23:42" itemprop="dateCreated datePublished" datetime="2019-10-24T16:18:21+08:00">2019-10-24</time>
             </span>
-          
-            
-
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/" itemprop="url" rel="index">
+                    <span itemprop="name">Network</span>
+                  </a>
+                </span>
             </span>
-          
 
           
 
@@ -307,16 +263,27 @@
 
       
           <h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h2><p>It’s easy to deploy blog by Hexo. However the <code>hexo d -g</code> command can only push <code>.deploy_git</code> folder’s content to the repo. Just in case the computer is broken or we’re going to write a blog on another computer, it’s necessary to back up the blog’s source files in another place. We can use a new branch of the blog repo to achieve that.(note that the default branch <code>master</code> is used for Hexo to deploy static website files).  </p>
-          <!--noindex-->
-          
-            <div class="post-button">
-              <a class="btn" href="/2019/10/24/Back-up-Hexo-blog-source-files-with-GitHub-branch/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+<h2 id="Before-pushing"><a href="#Before-pushing" class="headerlink" title="Before pushing"></a>Before pushing</h2><ol>
+<li>enter the blog directory(eg. /hexo ) <code>git init</code>  </li>
+<li><code>git add .</code> Hexo has already made a <code>.gitignore</code> file, edit it as needded  </li>
+<li><code>git commit -m &quot;commit first time&quot;</code>  </li>
+<li><code>git remote add origin git@github.com:MatthewXY01/MatthewXY01.github.io.git</code>  </li>
+</ol>
+<h2 id="Push-source-files-to-the-new-branch"><a href="#Push-source-files-to-the-new-branch" class="headerlink" title="Push source files to the new branch"></a>Push source files to the new branch</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch <span class="built_in">source</span> <span class="comment">#新建分支 source</span></span><br><span class="line">git branch <span class="comment">#查看分支</span></span><br><span class="line">git checkout <span class="built_in">source</span> <span class="comment">#切换分支</span></span><br></pre></td></tr></table></figure>
+<p>Then, pull codes(which we just commit) and push them in the new branch:  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master</span><br><span class="line">git push -u origin <span class="built_in">source</span></span><br></pre></td></tr></table></figure>
+<p>And we can find the source files in the new branch of the repo.  </p>
+<h2 id="Update-blog"><a href="#Update-blog" class="headerlink" title="Update blog"></a>Update blog</h2><p>Every time we modify source files (eg. new posts, new configuration in _config.yml etc.), we can push them to the new branch:  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">'modify blog'</span>  </span><br><span class="line">git push --<span class="built_in">set</span>-upstreams origin <span class="built_in">source</span> <span class="comment"># configure 'push', this command only needs to be executed once</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<h2 id="Edit-source-files-in-another-computer"><a href="#Edit-source-files-in-another-computer" class="headerlink" title="Edit source files in another computer"></a>Edit source files in another computer</h2><ol>
+<li>refer the part <strong>Preinstallation</strong> and <strong>SSH keys</strong> in <a href="https://matthewxy01.github.io/2019/10/09/GitHub-Hexo-for-Personal-Blog/#more" target="_blank" rel="noopener">GitHub+Hexo for Personal Blog</a>  </li>
+<li>clone the repo</li>
+<li><code>git checkout origin/source</code></li>
+<li>enter the blog directory and <code>npm install hexo-deployer-git --save</code></li>
+<li>write blogs</li>
+</ol>
+
       
     </div>
 
@@ -324,15 +291,13 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
   </article>
   
   
   
 
-    
         
   
   
@@ -340,9 +305,9 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/23/Attention-Mechanism/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.png">
       <meta itemprop="name" content="Xinyuan Miao">
       <meta itemprop="description" content="不忘初心 野蛮生长">
-      <meta itemprop="image" content="/uploads/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -350,9 +315,8 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/10/23/Attention-Mechanism/" class="post-title-link" itemprop="url">Attention Mechanism</a>
           
+            <a href="/2019/10/23/Attention-Mechanism/" class="post-title-link" itemprop="url">Attention Mechanism</a>
         </h1>
 
         <div class="post-meta">
@@ -362,16 +326,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2019-10-23 15:42:35" itemprop="dateCreated datePublished" datetime="2019-10-23T15:42:35+08:00">2019-10-23</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -379,21 +335,17 @@
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-10-24 00:19:09" itemprop="dateModified" datetime="2019-10-24T00:19:09+08:00">2019-10-24</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Deep-learning/" itemprop="url" rel="index"><span itemprop="name">Deep learning</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Deep-learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep learning</span>
+                  </a>
+                </span>
             </span>
-          
 
           
 
@@ -406,17 +358,75 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>第一次听说<strong>Attention</strong>机制是在音视频处理课上，在视觉问答领域中有用到 <strong>Attention based model</strong> 后来在学习Matching Network的时候又一次接触到了。查询一些资料，做点总结和记录。  </p><h2 id="人类的注意力机制"><a href="#人类的注意力机制" class="headerlink" title="人类的注意力机制"></a>人类的注意力机制</h2><p>人类在感知东西的时候，一般不会是一个场景从到头看到尾每次全部都看，而往往是根据需求观察注意特定的一部分。观察一幅画面，重点看颜色鲜艳的部分；看一篇文章，先看大字标题和开头几句；听英语听力，在提问前的引导语句结束后开始全神贯注。我们对信息本身分配了不同程度的专注度。<br>观察许多流行的深度学习模型，很多创新点都是“从人的角度出发”被提出。这一点感觉很像仿生学（鲨鱼皮泳衣、蝙蝠和雷达等等）。’Attention’本身就是个很human-like的词，深度学习中的<strong>Attention mechanism</strong> 也是从人类视觉注意力机制中获得灵感。  </p>
-          <!--noindex-->
-          
-            <div class="post-button">
-              <a class="btn" href="/2019/10/23/Attention-Mechanism/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>第一次听说<strong>Attention</strong>机制是在音视频处理课上，在视觉问答领域中有用到 <strong>Attention based model</strong> 后来在学习Matching Network的时候又一次接触到了。查询一些资料，做点总结和记录。  </p>
+<h2 id="人类的注意力机制"><a href="#人类的注意力机制" class="headerlink" title="人类的注意力机制"></a>人类的注意力机制</h2><p>人类在感知东西的时候，一般不会是一个场景从到头看到尾每次全部都看，而往往是根据需求观察注意特定的一部分。观察一幅画面，重点看颜色鲜艳的部分；看一篇文章，先看大字标题和开头几句；听英语听力，在提问前的引导语句结束后开始全神贯注。我们对信息本身分配了不同程度的专注度。<br>观察许多流行的深度学习模型，很多创新点都是“从人的角度出发”被提出。这一点感觉很像仿生学（鲨鱼皮泳衣、蝙蝠和雷达等等）。’Attention’本身就是个很human-like的词，深度学习中的<strong>Attention mechanism</strong> 也是从人类视觉注意力机制中获得灵感。  </p>
+<h2 id="深度学习中的注意力机制"><a href="#深度学习中的注意力机制" class="headerlink" title="深度学习中的注意力机制"></a>深度学习中的注意力机制</h2><p>深度学习中的注意力机制从本质上讲和人类的选择性视觉注意力机制类似，核心目标也是从众多信息中选择出对当前任务目标更关键的信息。具体来说，也只是利用一系列权重参数构建注意类分配系数。  </p>
+<h3 id="Encoder-Decoder-框架"><a href="#Encoder-Decoder-框架" class="headerlink" title="Encoder-Decoder 框架"></a>Encoder-Decoder 框架</h3><p>注意力机制作为一种通用思想，不依赖于具体框架存在，但又通常附着在Encoder-Decoder框架下。如图是文本处理领域里常用的Encoder-Decoder框架最抽象的一种表示：  </p>
+<img src="/2019/10/23/Attention-Mechanism/encoder-decoder.jpg" class="">  
+
+<p>可以把它看作适合处理由一个句子（或篇章）生成另外一个句子（或篇章）的通用处理模型。对于句子对&lt;Source,Target&gt;，我们的目标是给定输入句子Source，期待通过Encoder-Decoder框架来生成目标句子Target。Source和Target可以是同一种语言，也可以是两种不同的语言。而Source和Target分别由各自的单词序列构成：  </p>
+<img src="/2019/10/23/Attention-Mechanism/source-target.jpg" class="">  
+
+<p>Encoder对单词序列Source进行编码，进行非线性变换转换为中间语义c，再将编码结果c送入Decoder从而生成目标序列Target.<br>采用这种结构的模型在许多比较难的序列预测问题（如文本翻译）上都取得了最好的结果：  </p>
+<ul>
+<li><a href="https://arxiv.org/abs/1409.3215" target="_blank" rel="noopener">Sequence to Sequence Learning with Neural Networks, 2014</a></li>
+<li><a href="https://arxiv.org/abs/1406.1078" target="_blank" rel="noopener">Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation, 2014</a>  </li>
+</ul>
+<p>其中，文本处理和语音识别的Encoder通常采用RNN模型，而图像处理的Encoder采用CNN模型，Decoder通常都由RNN/LSTM实现。中间语义编码c为<strong>定长</strong>向量，这引发了一系列问题：  </p>
+<ul>
+<li>RNN模型本身存在长程梯度消失的问题</li>
+<li>输入序列不论长短都会被编码成一个固定长度的向量表示，而解码则受限于该固定长度的向量表示，输入序列过长则编码结果很难保留全部必要信息  </li>
+</ul>
+<h3 id="引入Attention-mechanism"><a href="#引入Attention-mechanism" class="headerlink" title="引入Attention mechanism"></a>引入Attention mechanism</h3><p>还是以文本翻译为例，对基本模型(Soft attention)进行说明。</p>
+<h4 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h4><p>打破了传统Encoder-Decoder结构在编解码时都依赖于内部一个固定长度向量的限制。原先的模型中未引入注意力机制，对于最终输出序列，有以下表示：  </p>
+<img src="/2019/10/23/Attention-Mechanism/no-attention.jpg" class="">  
+<p>显然，在文本翻译的例子中，对于输出序列中的任意单词的生成过程，中间语义作为生成的参与者没有发生变化。换言之，每一个输出单词都“平均”地考虑了输入句子中的每一个单词，盲目而缺少针对性。以’Tom Chase Jerry’这句为例，理想输出应该是“汤姆”、“追逐”、“杰瑞”。事实上，“杰瑞”为音译，原输入对这一输出的影响应该只存在于’Jerry’，在传统的Encoder-Dcoder框架中，“杰瑞”收到了’Tom chases Jerry’的平均影响。  </p>
+<img src="/2019/10/23/Attention-Mechanism/tom-chases-jerry.jpg" class="">  
+<p>显然，在输入为短句的情况下，未引入注意力机制并不太影响，但不难理解，长句的输入将会影响模型的性能。对于上面的例子，如果引入attention，为体现输入对输出的不同影响程度，给以给出类似的概率分布值： （Tom,0.3）(Chase,0.2) (Jerry,0.5). 考虑到概率分布的影响，编码结果c的产生发生了变化。具体来说，将注意力机制引入原先模型后，运行如图：  </p>
+<img src="/2019/10/23/Attention-Mechanism/with_attention.jpg" class="">  
+<p>对应的输出序列可表示为：  </p>
+<img src="/2019/10/23/Attention-Mechanism/attention.jpg" class="">  
+
+<h4 id="考虑了概率分布的中间语义C"><a href="#考虑了概率分布的中间语义C" class="headerlink" title="考虑了概率分布的中间语义C"></a>考虑了概率分布的中间语义C</h4><p>在引入了attention机制后，C的编码变得更有针对性，还是以上面“猫捉老鼠”为例，新模型下C的可能对应以下：  </p>
+<img src="/2019/10/23/Attention-Mechanism/newc.jpg" class="">  
+<p>其中，f2是Encoder对raw input word的一种变化，以RNN为例，由于每个cell间对应的参数是共享的，f2可认为是恒定的一种变换，结果可能（以）是hidden value. g可认为是将Encoder接收的单词们的中间表示整合为接收的句子的中间语义C的操作。<strong>一般的做法中，g函数就是对构成元素加权求和：</strong>  </p>
+<img src="/2019/10/23/Attention-Mechanism/g.jpg" class="">  
+<p>其中，Lx是source的长度，此例为3，而a_ij则是对于每个Ci中的h_ij的注意力分配系数（概率）。翻译“汤姆”时，C汤姆的计算过程如图：  </p>
+<img src="/2019/10/23/Attention-Mechanism/Ctom.jpg" class="">  
+
+<h4 id="Attention系数a"><a href="#Attention系数a" class="headerlink" title="Attention系数a"></a>Attention系数a</h4><p>编码C的生成考虑了注意力机制，那么Attention系数a从哪来？<br>观察到系数和为一，自然想到这是在经过某种带有“归一化”操作的计算后产生的，具体的过程可以通过展开模型结构来理解。将传统Encoder-Decoder框架展开：  </p>
+<img src="/2019/10/23/Attention-Mechanism/detailE-C.jpg" class="">  
+<p>其中，EOS代表输入序列的中止。也可以从中观察到当前时刻的输出y参与了下一时刻输出的生成。注意力系数的计算如图：  </p>
+<img src="/2019/10/23/Attention-Mechanism/coefficient.jpg" class="">  
+<p>可以看出，Soft attention模型中，Attention系数的归一化是通过Softmax函数实现的，Softmax既能实现归一化，又能突出重要元素的权重。而在送入Softmax函数之前，“待归一化”的结果是通过F函数同时作用于Encoder与Decoder产生。F是个度量similarity的函数，可以有多种选择：</p>
+<ul>
+<li>普通点积</li>
+<li>Cosine distance(可以视为归一化后的点积——向量夹角Cos值可由向量点乘除以向量模长计算)</li>
+<li>L1 or L2 distance</li>
+<li>…<br>到此，我大概理解为什么Matching Network利用了 <em>‘external memories’</em>(用到LSTM)同时被归为Metric-based方法了  <blockquote>
+<p>In this work, we employ ideas from metric learning based on deep neural features and from recent advances that augment neural networks with external memories<br>——Vinyals, O et al. <a href="https://arxiv.org/abs/1606.04080" target="_blank" rel="noopener">Matching networks for one shot learning, 2016</a></p>
+</blockquote>
+</li>
+</ul>
+<p>Attention因为涉及到了度量距离，其在文本翻译问题中的物理意义可以看作是“短语对齐”。 </p>
+<h3 id="Attention-mechanism的本质"><a href="#Attention-mechanism的本质" class="headerlink" title="Attention mechanism的本质"></a>Attention mechanism的本质</h3><p>前面说过Attention机制不依赖于具体框架存在，如果抛开Encoder-Decoder框架，可以这样看待Attention机制：Source中的构成元素想象成是由一系列的&lt;Key,Value&gt;数据对构成，此时给定Target中的某个元素Query，通过计算Query和各个Key的相似性或者相关性，得到每个Key对应Value的权重系数，然后对Value进行加权求和，即得到了最终的Attention数值。更概括地说，<strong>Attention本质是一种加权求和：</strong>  </p>
+<img src="/2019/10/23/Attention-Mechanism/nature_attention.jpg" class="">  
+
+<p>总结下来，Attention机制的具体计算过程可如下：  </p>
+<ol>
+<li>计算Query和Key的similarity</li>
+<li>对上一步的结果归一化处理，得到系数</li>
+<li>根据系数对Value加权求和</li>
+</ol>
+<img src="/2019/10/23/Attention-Mechanism/procedure.jpg" class="">  
+<p>目前绝大多数具体的注意力机制计算方法都符合上述的三阶段抽象计算过程，以上仅是Soft attention的基本模型，还有一种Self attention未说明（懒）。  </p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<li>传统Encoder-Decoder框架应用于RNN使用定长中间向量，这限制了对长序列输入的学习</li>
+<li>Attentinon mechanism通过让网络学会“对于每个输出项，应当将注意力放在输入的哪部分”来克服传统Encoder-Decoder框架的缺陷</li>
+<li>Attention mechanism应用于多种类型的序列预测问题，包括文本翻译、语音识别等  </li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/" target="_blank" rel="noopener">Attention in Long Short-Term Memory Recurrent Neural Networks</a><br><a href="https://www.zhihu.com/question/68482809/answer/264632289" target="_blank" rel="noopener">目前主流的attention方法都有哪些</a></p>
+
       
     </div>
 
@@ -424,15 +434,13 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
   </article>
   
   
   
 
-    
         
   
   
@@ -440,9 +448,9 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/09/GitHub-Hexo-for-Personal-Blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.png">
       <meta itemprop="name" content="Xinyuan Miao">
       <meta itemprop="description" content="不忘初心 野蛮生长">
-      <meta itemprop="image" content="/uploads/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -450,9 +458,8 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/10/09/GitHub-Hexo-for-Personal-Blog/" class="post-title-link" itemprop="url">GitHub+Hexo for Personal Blog</a>
           
+            <a href="/2019/10/09/GitHub-Hexo-for-Personal-Blog/" class="post-title-link" itemprop="url">GitHub+Hexo for Personal Blog</a>
         </h1>
 
         <div class="post-meta">
@@ -462,16 +469,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2019-10-09 00:37:38" itemprop="dateCreated datePublished" datetime="2019-10-09T00:37:38+08:00">2019-10-09</time>
             </span>
-          
-            
-
-            
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
@@ -479,21 +478,17 @@
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-10-24 14:55:17" itemprop="dateModified" datetime="2019-10-24T14:55:17+08:00">2019-10-24</time>
               </span>
-            
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a></span>
-
-                
-                
-              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/" itemprop="url" rel="index">
+                    <span itemprop="name">Network</span>
+                  </a>
+                </span>
             </span>
-          
 
           
 
@@ -507,16 +502,81 @@
 
       
           <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>几个月前准备保研，在网上搜索老师信息时，进了一位老师的个人博客，当时有被“性冷淡”的博客界面风格吸引到（后来发现还是有挺多用这个主题的…）。保研去向尘埃落定，虽然最后没有跟随那位“博主”老师（因为压根就没有回我邮件2333，故事还没开始就结束了），但在这段清闲的日子还是想着自己也弄个Blog打发一下时间。随便在网上搜索了一下，决定了用GitHub + Hexo搭建个人博客，之后顺藤摸瓜从那位老师的GitHub对应仓库找到那款 <del>“性冷淡”</del> 简约风格主题——NexT。  </p>
-          <!--noindex-->
-          
-            <div class="post-button">
-              <a class="btn" href="/2019/10/09/GitHub-Hexo-for-Personal-Blog/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+<p>写这篇的原因一是为了记录，但其实类似的教程多不胜数，我自己也看了许多人写的搭建过程，都是大同小异。所以这里只记录最最基本的流程以及少数自己用到的个性化操作，后续有增加的话再来修改这一篇或者另写就行了。写这篇的另一个原因就是熟悉一下Markdown语法，还是多有趣的一件事:)  </p>
+<p><strong>Hexo</strong>: <a href="https://hexo.io" target="_blank" rel="noopener">https://hexo.io</a><br><strong>Markdown Doc</strong>(Simple Chinese): <a href="https://markdown-zh.readthedocs.io/en/latest/" target="_blank" rel="noopener">https://markdown-zh.readthedocs.io/en/latest/</a><br><strong>NexT v6 and v7</strong>: <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">https://github.com/theme-next/hexo-theme-next</a>  </p>
+<h2 id="Preinstallation"><a href="#Preinstallation" class="headerlink" title="Preinstallation"></a>Preinstallation</h2><ul>
+<li>install Node.js <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a></li>
+<li>install git <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">https://git-scm.com/download/win</a></li>
+<li>install hexo(<em>Bash</em> recommended) <code>$npm install hexo-cli -g</code></li>
+<li>create a new repository with the name <strong>“‘Account Name’.github.io”</strong></li>
+</ul>
+<h2 id="SSH-keys"><a href="#SSH-keys" class="headerlink" title="SSH keys"></a>SSH keys</h2><ul>
+<li>git bash <code>$ cd ~/. ssh</code> to check exisiting ssh keys, if <strong><em>‘No such file or directory’</em></strong> , then<br><code>ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</code> to generate key file  </li>
+<li><code>$ cat ~/.ssh/id_rsa.pub</code> and copy the content in the key file  </li>
+<li>create key in GitHub: account Settings-&gt;SSH and GPG keys-&gt;New SSH keys  </li>
+<li>check the SSH key <code>$ ssh -T git@github.com #do not modify the address</code> and <strong><em>‘Hi MatthewXY01! You’ve successfully authenticated, but GitHub does not provide shell access.’</em></strong> represents successful configuration  </li>
+</ul>
+<h2 id="Initialization"><a href="#Initialization" class="headerlink" title="Initialization"></a>Initialization</h2><ul>
+<li>create an empty folder called <em>hexo</em> (whatever) <em>eg.</em> ‘M:\hexo’  </li>
+<li><em>git bash here</em> and  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init  <span class="comment">#hexo会自动下载一些文件到这个目录，包括node_modules</span></span><br><span class="line">$ hexo g     <span class="comment">#或者 hexo generate 生成文件</span></span><br><span class="line">$ hexo s     <span class="comment">#或者 hexo server 启动服务，之后hexo 在public 生成相关html，可通过local test 查看本地预览</span></span><br></pre></td></tr></table></figure>
+local test: <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>  </li>
+</ul>
+<h2 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h2><ul>
+<li>install deployer: git bash <code>npm install hexo-deployer-git --save</code></li>
+<li>in <strong>hexo</strong> folder, modify the <strong>_config.yml</strong> file as follows:<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">        type:</span> <span class="string">git</span>  </span><br><span class="line"><span class="attr">        repository:</span> <span class="string">git@github.com:MatthewXY01/MatthewXY01.github.io.git</span> <span class="comment">#SSH address</span></span><br><span class="line"><span class="attr">        branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<img src="/2019/10/09/GitHub-Hexo-for-Personal-Blog/SSH_address.png" class="" title="SSH_address">  </li>
+<li>type <code>$ hexo g</code> and <code>$ hexo d</code> or type <code>$ hexo d -g</code></li>
+</ul>
+<h2 id="Theme—NexT"><a href="#Theme—NexT" class="headerlink" title="Theme—NexT"></a>Theme—<em>NexT</em></h2><ul>
+<li>the simplest way to install is to clone the entire repository:  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd hexo  </span><br><span class="line">$ git clone https://github.com/theme-next/hexo-theme-next themes/next-reloaded</span><br></pre></td></tr></table></figure></li>
+<li>in the <strong>site</strong> _config.yml(/_config.yml), set <em>‘theme: next-reloaded’</em></li>
+<li>config the <strong>theme</strong> _config.yml in the file ‘/themes/next-reloaded/_config.yml’. (many subsequent modifications are made here!)</li>
+</ul>
+<h3 id="Scheme"><a href="#Scheme" class="headerlink" title="Scheme"></a>Scheme</h3><ul>
+<li>in the <strong>theme</strong> _config.yml, set <em>‘scheme: Mist’</em>  </li>
+</ul>
+<h3 id="Local-search"><a href="#Local-search" class="headerlink" title="Local search"></a>Local search</h3><ul>
+<li><code>$npm install hexo-generator-searchdb --save</code></li>
+<li>in the <strong>theme</strong> _config.yml, set <em>‘local_search: enable: true’</em></li>
+<li>in the <strong>site</strong> _config.yml, paste the following lines anywhere:  <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line"><span class="attr">  path:</span> <span class="string">search.xml</span></span><br><span class="line"><span class="attr">  field:</span> <span class="string">post</span> <span class="comment">#search range, can be 'post', 'page', 'all'</span></span><br><span class="line"><span class="attr">  format:</span> <span class="string">html</span></span><br><span class="line"><span class="attr">  limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="Social-links"><a href="#Social-links" class="headerlink" title="Social links"></a>Social links</h3><ul>
+<li>in the <strong>theme</strong> _config.yml, set as follow:  <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line"><span class="attr">  GitHub:</span> <span class="attr">https://github.com/MatthewXY01</span> <span class="string">||</span> <span class="string">github</span></span><br><span class="line"><span class="attr">  E-Mail:</span> <span class="attr">mailto:mxinyuan@foxmail.com</span> <span class="string">||</span> <span class="string">envelope</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="Menu"><a href="#Menu" class="headerlink" title="Menu"></a>Menu</h3><ul>
+<li>in the <strong>theme</strong> _config.yml, search <em>‘menu’</em> and set as follow:  <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line"><span class="attr">  home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line"><span class="attr">  tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">  categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span></span><br><span class="line"><span class="attr">  archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span></span><br></pre></td></tr></table></figure></li>
+<li>create new pages and link to the menu <code>$ hexo new page categories</code></li>
+<li>edit the ‘/source/categories/index.md’ file of the page just created. add <em>‘type: categories’</em> </li>
+<li>similar method for the creation of the ‘tags’ page</li>
+</ul>
+<h2 id="Posts"><a href="#Posts" class="headerlink" title="Posts"></a>Posts</h2><h3 id="Create-a-new-article"><a href="#Create-a-new-article" class="headerlink" title="Create a new article"></a>Create a new article</h3><ul>
+<li>in the <strong>theme</strong> _config.yml, modify <em>‘auto_excerpt’</em>, sothat home page shows only the excerpt and click <em>Read more</em> to read the full article :  <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">auto_excerpt:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  length:</span> <span class="number">150</span> <span class="comment">#length of the excerpt</span></span><br></pre></td></tr></table></figure></li>
+<li>in the <strong>site</strong> _config.yml, set <em>‘post_asset_folder’</em> to <em>‘true’</em>, sothat every time we create  new posts, it will automatically generates folders with the same name(Used to store audio and video resources)  </li>
+<li>in <strong>hexo</strong> folder git bash here and enter the command <em>hexo new ‘postname’</em>  </li>
+</ul>
+<h3 id="Tags-and-category"><a href="#Tags-and-category" class="headerlink" title="Tags and category"></a>Tags and category</h3><ul>
+<li>open ‘/source/_posts/postname.md’</li>
+<li>in the beginning of the post, set tags and categoty: <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">categories:</span> <span class="string">categoty_example</span></span><br><span class="line"><span class="attr">tags:</span> <span class="comment">#multi-tag is available</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">tag1</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">tag2</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">tag3</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">...</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><h3 id="YMAL"><a href="#YMAL" class="headerlink" title="YMAL"></a>YMAL</h3><ul>
+<li>case sensitive</li>
+<li>in ‘key-value pair’, do not ignore a space after the colon</li>
+</ul>
+<h3 id="Markdown-representation"><a href="#Markdown-representation" class="headerlink" title="Markdown representation"></a>Markdown representation</h3><ul>
+<li>If something is wrong with the representation and hard to tune, you can try deleting extra spaces or adopting an alternative format<br>e.g. code block in  format:<br>```<br>code<br>```<br>some representation error occurs when there’s extra space following the last “```“ </li>
+</ul>
+<h3 id="404"><a href="#404" class="headerlink" title="404"></a>404</h3><p>case sensitive: sometimes you switch between capital letter and small letter, which may lead to 404 not found errors  </p>
+<ul>
+<li>set <code>ignorecase</code> as false in the file <em>‘.deploy_git/.git/config’</em></li>
+<li><code>$ hexo clean</code> and <code>$ hexo d -g</code></li>
+</ul>
+
       
     </div>
 
@@ -524,15 +584,13 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
   </article>
   
   
   
 
-    
         
   
   
@@ -540,9 +598,9 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/07/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.png">
       <meta itemprop="name" content="Xinyuan Miao">
       <meta itemprop="description" content="不忘初心 野蛮生长">
-      <meta itemprop="image" content="/uploads/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -550,9 +608,8 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/10/07/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
           
+            <a href="/2019/10/07/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
         </h1>
 
         <div class="post-meta">
@@ -562,13 +619,8 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              
-                
-              
-
               <time title="Created: 2019-10-07 13:37:51" itemprop="dateCreated datePublished" datetime="2019-10-07T13:37:51+08:00">2019-10-07</time>
             </span>
-          
 
           
 
@@ -582,16 +634,19 @@
 
       
           <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-          <!--noindex-->
-          
-            <div class="post-button">
-              <a class="btn" href="/2019/10/07/hello-world/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
       
     </div>
 
@@ -599,15 +654,13 @@
     
     
       <footer class="post-footer">
-          <div class="post-eof"></div>
-        
+        <div class="post-eof"></div>
       </footer>
   </article>
   
   
   
 
-    
   </div>
 
   
@@ -645,87 +698,53 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image"
-      src="/uploads/avatar.png"
-      alt="Xinyuan Miao">
+  <img class="site-author-image" itemprop="image" alt="Xinyuan Miao"
+    src="/uploads/avatar.png">
   <p class="site-author-name" itemprop="name">Xinyuan Miao</p>
   <div class="site-description" itemprop="description">不忘初心 野蛮生长</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
-          <a href="/archives/%20%7C%7C%20archive">
+          <a href="/archives/">
         
           <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-categories">
-        
+            <a href="/categories/">
           
-            <a href="/categories/%20%7C%7C%20th">
-          
-        
         <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">categories</span>
-        </a>
+        <span class="site-state-item-name">categories</span></a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
+            <a href="/tags/">
           
-            <a href="/tags/%20%7C%7C%20tags">
-          
-        
         <span class="site-state-item-count">6</span>
-        <span class="site-state-item-name">tags</span>
-        </a>
+        <span class="site-state-item-name">tags</span></a>
       </div>
-    
   </nav>
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
         <a href="https://github.com/MatthewXY01" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;MatthewXY01" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
         <a href="mailto:mxinyuan@foxmail.com" title="E-Mail &amp;rarr; mailto:mxinyuan@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
-    
   </div>
 
 
   <div class="links-of-blogroll motion-element">
     <div class="links-of-blogroll-title">
       <i class="fa fa-fw fa-link"></i>
-      Friends' links
+      Links
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
           <a href="https://tomstark827.github.io/" title="https:&#x2F;&#x2F;tomstark827.github.io&#x2F;" rel="noopener" target="_blank">彤姐</a>
         </li>
-      
     </ul>
   </div>
 
@@ -739,17 +758,24 @@
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Xinyuan Miao</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.1</div>
+  <div class="theme-info">Theme – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.2
+  </div>
 
         
 
@@ -770,13 +796,12 @@
   </div>
 
   
-  <script src="/lib/anime.min.js?v=3.1.0"></script>
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
-<script src="/js/schemes/muse.js?v=7.4.1"></script>
-
-<script src="/js/next-boot.js?v=7.4.1"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -787,10 +812,7 @@
 
 
 
-
-
-  <script src="/js/local-search.js?v=7.4.1"></script>
-
+  <script src="/js/local-search.js"></script>
 
 
 
