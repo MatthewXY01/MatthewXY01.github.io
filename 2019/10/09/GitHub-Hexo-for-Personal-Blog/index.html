@@ -270,7 +270,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>几个月前准备保研，在网上搜索老师信息时，进了一位老师的个人博客，当时有被“性冷淡”的博客界面风格吸引到（后来发现还是有挺多用这个主题的…）。保研去向尘埃落定，虽然最后没有跟随那位“博主”老师（因为压根就没有回我邮件2333，故事还没开始就结束了），但在这段清闲的日子还是想着自己也弄个Blog打发一下时间。随便在网上搜索了一下，决定了用GitHub + Hexo搭建个人博客，之后顺藤摸瓜从那位老师的GitHub对应仓库找到那款 <del>“性冷淡”</del> 简约风格主题——NexT。  </p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>几个月前准备保研，在网上搜索老师信息时，进了一位老师的个人博客，当时有被“性冷淡”的博客界面风格吸引到（后来发现还是有挺多用这个主题的…）。保研去向尘埃落定，虽然最后没有跟随那位“博主”老师（因为压根就没有回我邮件2333，故事还没开始就结束了），但在这段清闲的日子还是想着自己也弄个Blog打发一下时间。随便在网上搜索了一下，决定了用GitHub + Hexo搭建个人博客，之后顺藤摸瓜从那位老师的GitHub对应仓库找到那款 <del>“性冷淡”</del> 简约风格主题——NexT。  </p><a id="more"></a>
 <p>写这篇的原因一是为了记录，但其实类似的教程多不胜数，我自己也看了许多人写的搭建过程，都是大同小异。所以这里只记录最最基本的流程以及少数自己用到的个性化操作，后续有增加的话再来修改这一篇或者另写就行了。写这篇的另一个原因就是熟悉一下Markdown语法，还是多有趣的一件事:)  </p>
 <p><strong>Hexo</strong>: <a href="https://hexo.io" target="_blank" rel="noopener">https://hexo.io</a><br><strong>Markdown Doc</strong>(Simple Chinese): <a href="https://markdown-zh.readthedocs.io/en/latest/" target="_blank" rel="noopener">https://markdown-zh.readthedocs.io/en/latest/</a><br><strong>NexT v6 and v7</strong>: <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">https://github.com/theme-next/hexo-theme-next</a>  </p>
 <h2 id="Preinstallation"><a href="#Preinstallation" class="headerlink" title="Preinstallation"></a>Preinstallation</h2><ul>
@@ -293,7 +293,7 @@ local test: <a href="http://localhost:4000/" target="_blank" rel="noopener">http
 <h2 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h2><ul>
 <li>install deployer: git bash <code>npm install hexo-deployer-git --save</code></li>
 <li>in <strong>hexo</strong> folder, modify the <strong>_config.yml</strong> file as follows:<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">        type:</span> <span class="string">git</span>  </span><br><span class="line"><span class="attr">        repository:</span> <span class="string">git@github.com:MatthewXY01/MatthewXY01.github.io.git</span> <span class="comment">#SSH address</span></span><br><span class="line"><span class="attr">        branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-<img src="/2019/10/09/GitHub-Hexo-for-Personal-Blog/SSH_address.png" class="" title="SSH_address">  </li>
+<img src="/2019/10/09/GitHub-Hexo-for-Personal-Blog/SSH_address.png" class title="SSH_address">  </li>
 <li>type <code>$ hexo g</code> and <code>$ hexo d</code> or type <code>$ hexo d -g</code></li>
 </ul>
 <h2 id="Theme—NexT"><a href="#Theme—NexT" class="headerlink" title="Theme—NexT"></a>Theme—<em>NexT</em></h2><ul>
