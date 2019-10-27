@@ -23,11 +23,12 @@ font-size: 2em;
 line-height: 1.4em;
 }
 
-.menu {
-margin: 0;
-float: right;//菜单栏靠右浮动
-font-size: 16px;
-}
+@media screen and (min-width: 1200px) {
+    .menu {
+        float: right;//宽、彩色屏设备下菜单栏靠右浮动
+        font-size: 16px;
+    }
+} 
 .posts-expand .post-block:not(:first-child) {
     margin-top: 80px;
 }//首页post block 间的间隔
