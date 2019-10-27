@@ -1147,7 +1147,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #a6838f;
+  background: #c699ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2520,10 +2520,11 @@ hr {
   font-size: 2em;
   line-height: 1.4em;
 }
-.menu {
-  margin: 0;
-  float: right;
-  font-size: 16px;
+@media screen and (min-width: 1200px) {
+  .menu {
+    float: right;
+    font-size: 16px;
+  }
 }
 .posts-expand .post-block:not(:first-child) {
   margin-top: 80px;
