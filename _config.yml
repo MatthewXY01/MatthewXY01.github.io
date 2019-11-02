@@ -88,3 +88,8 @@ search:
   field: post
   format: html
   limit: 10000
+
+mathjax:
+  single_dollars: true
+  cjk_char_width: 16
+  svg: true

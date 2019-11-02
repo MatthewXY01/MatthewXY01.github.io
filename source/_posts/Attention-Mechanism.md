@@ -39,7 +39,7 @@ Encoder对单词序列Source进行编码，进行非线性变换转换为中间�
 {% asset_img no-attention.jpg %}  
 显然，在文本翻译的例子中，对于输出序列中的任意单词的生成过程，中间语义作为生成的参与者没有发生变化。换言之，每一个输出单词都“平均”地考虑了输入句子中的每一个单词，盲目而缺少针对性。以'Tom Chase Jerry'这句为例，理想输出应该是“汤姆”、“追逐”、“杰瑞”。事实上，“杰瑞”为音译，原输入对这一输出的影响应该只存在于'Jerry'，在传统的Encoder-Dcoder框架中，“杰瑞”收到了'Tom chases Jerry'的平均影响。  
 {% asset_img tom-chases-jerry.jpg %}  
-显然，在输入为短句的情况下，未引入注意力机制并不太影响，但不难理解，长句的输入将会影响模型的性能。对于上面的例子，如果引入attention，为体现输入对输出的不同影响程度，给以给出类似的概率分布值： （Tom,0.3）(Chase,0.2) (Jerry,0.5). 考虑到概率分布的影响，编码结果c的产生发生了变化。具体来说，将注意力机制引入原先模型后，运行如图：  
+显然，在输入为短句的情况下，未引入注意力机制并不太影响，但不难理解，长句的输入将会影响模型的性能。对于上面的例子，如果引入attention，为体现输入对输出的不同影响程度，可以给出类似的概率分布值： （Tom,0.3）(Chase,0.2) (Jerry,0.5). 考虑到概率分布的影响，编码结果c的产生发生了变化。具体来说，将注意力机制引入原先模型后，运行如图：  
 {% asset_img with_attention.jpg %}  
 对应的输出序列可表示为：  
 {% asset_img attention.jpg %}  
@@ -65,7 +65,7 @@ Encoder对单词序列Source进行编码，进行非线性变换转换为中间�
 - ...
 到此，我大概理解为什么Matching Network利用了 *'external memories'*(用到LSTM)同时被归为Metric-based方法了  
 >In this work, we employ ideas from metric learning based on deep neural features and from recent advances that augment neural networks with external memories  
-——Vinyals, O et al. [Matching networks for one shot learning, 2016](https://arxiv.org/abs/1606.04080)
+——*Vinyals, O et al.* [Matching networks for one shot learning, 2016](https://arxiv.org/abs/1606.04080)
 
 Attention因为涉及到了度量距离，其在文本翻译问题中的物理意义可以看作是“短语对齐”。 
 
@@ -87,5 +87,5 @@ Attention因为涉及到了度量距离，其在文本翻译问题中的物理�
 3. Attention mechanism应用于多种类型的序列预测问题，包括文本翻译、语音识别等  
 
 ## Reference
-[Attention in Long Short-Term Memory Recurrent Neural Networks](https://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/)
+[Attention in Long Short-Term Memory Recurrent Neural Networks](https://machinelearningmastery.com/attention-long-short-term-memory-recurrent-neural-networks/)  
 [目前主流的attention方法都有哪些](https://www.zhihu.com/question/68482809/answer/264632289)
