@@ -73,7 +73,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;23&#x2F;Attention-Mechanism&#x2F;coefficient.jpg">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;23&#x2F;Attention-Mechanism&#x2F;nature_attention.jpg">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;23&#x2F;Attention-Mechanism&#x2F;procedure.jpg">
-<meta property="og:updated_time" content="2019-10-23T16:19:09.951Z">
+<meta property="og:updated_time" content="2019-11-01T03:02:06.714Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;23&#x2F;Attention-Mechanism&#x2F;encoder-decoder.jpg">
 
@@ -257,7 +257,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-24 00:19:09" itemprop="dateModified" datetime="2019-10-24T00:19:09+08:00">2019-10-24</time>
+                <time title="Modified: 2019-11-01 11:02:06" itemprop="dateModified" datetime="2019-11-01T11:02:06+08:00">2019-11-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -306,7 +306,7 @@
 <img src="/2019/10/23/Attention-Mechanism/no-attention.jpg" class>  
 <p>显然，在文本翻译的例子中，对于输出序列中的任意单词的生成过程，中间语义作为生成的参与者没有发生变化。换言之，每一个输出单词都“平均”地考虑了输入句子中的每一个单词，盲目而缺少针对性。以’Tom Chase Jerry’这句为例，理想输出应该是“汤姆”、“追逐”、“杰瑞”。事实上，“杰瑞”为音译，原输入对这一输出的影响应该只存在于’Jerry’，在传统的Encoder-Dcoder框架中，“杰瑞”收到了’Tom chases Jerry’的平均影响。  </p>
 <img src="/2019/10/23/Attention-Mechanism/tom-chases-jerry.jpg" class>  
-<p>显然，在输入为短句的情况下，未引入注意力机制并不太影响，但不难理解，长句的输入将会影响模型的性能。对于上面的例子，如果引入attention，为体现输入对输出的不同影响程度，给以给出类似的概率分布值： （Tom,0.3）(Chase,0.2) (Jerry,0.5). 考虑到概率分布的影响，编码结果c的产生发生了变化。具体来说，将注意力机制引入原先模型后，运行如图：  </p>
+<p>显然，在输入为短句的情况下，未引入注意力机制并不太影响，但不难理解，长句的输入将会影响模型的性能。对于上面的例子，如果引入attention，为体现输入对输出的不同影响程度，可以给出类似的概率分布值： （Tom,0.3）(Chase,0.2) (Jerry,0.5). 考虑到概率分布的影响，编码结果c的产生发生了变化。具体来说，将注意力机制引入原先模型后，运行如图：  </p>
 <img src="/2019/10/23/Attention-Mechanism/with_attention.jpg" class>  
 <p>对应的输出序列可表示为：  </p>
 <img src="/2019/10/23/Attention-Mechanism/attention.jpg" class>  
@@ -328,7 +328,7 @@
 <li>Cosine distance(可以视为归一化后的点积——向量夹角Cos值可由向量点乘除以向量模长计算)</li>
 <li>L1 or L2 distance</li>
 <li>…<br>到此，我大概理解为什么Matching Network利用了 <em>‘external memories’</em>(用到LSTM)同时被归为Metric-based方法了  <blockquote>
-<p>In this work, we employ ideas from metric learning based on deep neural features and from recent advances that augment neural networks with external memories<br>——Vinyals, O et al. <a href="https://arxiv.org/abs/1606.04080" target="_blank" rel="noopener">Matching networks for one shot learning, 2016</a></p>
+<p>In this work, we employ ideas from metric learning based on deep neural features and from recent advances that augment neural networks with external memories<br>——<em>Vinyals, O et al.</em> <a href="https://arxiv.org/abs/1606.04080" target="_blank" rel="noopener">Matching networks for one shot learning, 2016</a></p>
 </blockquote>
 </li>
 </ul>
@@ -432,20 +432,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
