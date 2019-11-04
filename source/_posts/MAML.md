@@ -55,12 +55,12 @@ N-way K-shot是few-shot learning中常见的experimental set-up. 以单个classi
 
 ## MAML
 ---
-**Outline:** propose an algorithm for meta-learning that is model-agnostic  
-**Core idea:** train the model’s **initial parameters** such that the model has maximal performance on a new task after the parameters have been updated through **one or more gradient steps** computed with a small amount of data from that new task  
+**Outline:** propose an algorithm for meta-learning that is model-agnostic.  
+**Core idea:** train the model’s **initial parameters** such that the model has maximal performance on a new task after the parameters have been updated through **one or more gradient steps** computed with a small amount of data from that new task.  
 **Strength:** model-agnostic  
-- compatible with any model trained with gradient descent
-- applicable to a variety of different learning problems, including classification, regression, and reinforcement learning
-- does not expand the number of learned parameters nor place constraints on the model architecture  
+- compatible with any model trained with gradient descent.
+- applicable to a variety of different learning problems, including classification, regression, and reinforcement learning.
+- does not expand the number of learned parameters nor place constraints on the model architecture.  
 
 ### Problem set-up and training protocol
 Use $f$ to denote a model that maps observation $x$ to $a$. Formally, each task $\mathcal{T}$ consists of a loss function $\mathcal{L}$, a distribution over initial observations $q\left(\mathbf{x}\_{1}\right)$, a transition distribution $q\left(\mathbf{x}\_{t+1} | \mathbf{x}\_{t}, \mathbf{a}_{t}\right)$ , and an episode length $H$.  
@@ -69,27 +69,35 @@ $$\mathcal{T}=\left\\{\mathcal{L}\left(\mathbf{x}\_{1}, \mathbf{a}\_{1}, \ldots,
 
 In supervised regression and classification problem, we can define the $H$=1 and drop the time subcript on $\mathbf{x}\_{t}$ if the model accepts a single input and produces a single output, rather than a sequence of inputs and outputs.  
 Now we're going to pay attention to the details of data partitioning. In meta-training procedure:  
-- sample a task $\mathcal{T}\_{i}$ from the distribution over tasks i.e. $p(\mathcal{T})$ with K samples drawn from ${q}\_{i}$ (support set under K-shot setting)
-- train the model with the K samples and get feedback from the corresponding loss $\mathcal{L}\_{\mathcal{T}\_{i}}$ from $\mathcal{T}\_{i}$
-- test on **new** samples from $\mathcal{T}\_{i}$(query set) and we will get a *test error*  
+- sample a task $\mathcal{T}\_{i}$ from the distribution over tasks i.e. $p(\mathcal{T})$ with K samples drawn from ${q}\_{i}$ (support set under K-shot setting).
+- train the model with the K samples and get feedback from the corresponding loss $\mathcal{L}\_{\mathcal{T}\_{i}}$ from $\mathcal{T}\_{i}$.
+- test on **new** samples from $\mathcal{T}\_{i}$(query set) and we will get a *test error*.  
 **Note:** The so-called *test error* which belongs to a certain $f$ in a certain training state is not equivalent to the exact test error of the meta-testing process.  
 >In effect, the test error on sampled tasks $\mathcal{T}\_{i}$ serves as the training error of the meta-learning process. —— *Chelsea Finn et al.*
 
 ### Algorithm
 Anyway, MAML's key idea is to train a powerful initial parameters that are **sensitive** to changes in the task such that small changes in the parameters will produce large improvements on the loss function of any task drawn from $p\left(\mathcal{T}\right)$. So let's get into the concrete algorithm.  
 {% asset_img algorithm.png %}  
-Nothing special except the update of the parameters. In the step 4 to 7, for each task, we take derivation of the loss in order to update the $\theta$ to $\theta_{i}^{\prime}$ with gradient descent.  
+Nothing special except the update of the parameters. In the step 4 to 7(inner loop), for each task, we calculate loss in order to get the optimal parameters $\theta_{i}^{\prime}$ for each task with gradient descent.  
+
 **Note:** 
-- $\alpha$ may be fixed as a hyperparameter or meta-learned. 
-- it's an identical copy of original $\theta$ with which each $\mathcal{T}\_{i}$ begins its parameter update. e.g. In the first loop, $\mathcal{T}\_2$ updates its parameters by $\theta\_{2}^{\prime}=\theta-\alpha \nabla\_{\theta} \mathcal{L}\_{\mathcal{T}\_{2}}\left(f\_{\theta}\right)$ but not $\theta\_{2}^{\prime}=\theta\_{1}^{\prime}-\alpha \nabla\_{\theta\_{1}^{\prime}} \mathcal{L}\_{\mathcal{T}\_{2}}\left(f\_{\theta\_{1}^{\prime}}\right)$
-- we consider one gradient update for each $\mathcal{T}\_{i}$ in one iteration but using multiple gradient updates is a straightforward extension. Actually this 'one update' setting tends to make this only one update the most valuable update in a sense so that the updated parameters can be more sensitive.  
+- $\alpha$ may be fixed as a hyperparameter or meta-learned.
+- pay attention $\theta$ and $\theta_{i}^{\prime}$.
+$\theta$ is the final target, the ideal **model initial parameter** which is randomly initialized at the beginning and updated in the outer loop(step 8 i.e. **meta-update or meta-optimizaiton**).  
+$\theta_{i}^{\prime}$ is the optimal parameter which is gotten by training on each of task $\mathcal{T}\_{i}$.  
+for each $\theta\_{i}^{\prime}=\theta-\alpha \nabla\_{\theta} \mathcal{L}\_{\mathcal{T}\_{i}}\left(f\_{\theta}\right)$, $\theta$ remain the same in one iteration of the inner loop, which is the newest initial parameter after previous update. i.e. $\mathcal{T}\_2$ updates its parameters by $\theta\_{2}^{\prime}=\theta-\alpha \nabla\_{\theta} \mathcal{L}\_{\mathcal{T}\_{2}}\left(f\_{\theta}\right)$ but not $\theta\_{2}^{\prime}=\theta\_{1}^{\prime}-\alpha \nabla\_{\theta\_{1}^{\prime}} \mathcal{L}\_{\mathcal{T}\_{2}}\left(f\_{\theta\_{1}^{\prime}}\right)$.
+- we consider one gradient update for each $\mathcal{T}\_{i}$ in one iteration of the inner loop but using multiple gradient updates is a straightforward extension. Actually this 'one update' setting tends to make this only one update the most valuable update in a sense so that the updated parameters can be more sensitive.  
 > That's one small step for a man, one giant leap for mankind. —— *Neil Armstrong*  
 
-- the loss in $\theta_\{i}^{\prime}=\theta-\alpha \nabla\_{\theta} \mathcal{L}\_{\mathcal{T}\_{i}}\left(f\_{\theta}\right)$ computed by the support set of $\mathcal{T}\_{i}$ and corresponding outputs but not **new** data in query set. However, in the **meta-update** $\theta \leftarrow \theta-\beta \nabla\_{\theta} \sum\_{\mathcal{T}\_{i} \sim p(\mathcal{T})} \mathcal{L}\_{\mathcal{T}\_{i}}\left(f\_{\theta\_{i}^{\prime}}\right)$ we use query data which is invisible to the previous training and **updated parameters** $\theta^{\prime}$ to compute the loss. Such setting is conducive to improving the generalization ability of the model.  
+- the loss in $\theta_\{i}^{\prime}=\theta-\alpha \nabla\_{\theta} \mathcal{L}\_{\mathcal{T}\_{i}}\left(f\_{\theta}\right)$ computed by the support set of $\mathcal{T}\_{i}$ and corresponding outputs but not the **new** data in query set. However, in the **meta-update** $\theta \leftarrow \theta-\beta \nabla\_{\theta} \sum\_{\mathcal{T}\_{i} \sim p(\mathcal{T})} \mathcal{L}\_{\mathcal{T}\_{i}}\left(f\_{\theta\_{i}^{\prime}}\right)$ we use query data which is invisible to the previous training(but sampled in task $\mathcal{T}\_{i}$ as well as $\mathcal{T}\_{i}$'s support set) and $\theta\_{i}^{\prime}$ to compute the loss. Such setting is conducive to improving the generalization ability of the model.
+- before next iteration of the inner loop, sample another batch of tasks.  
+
 **Approximation:** the MAML meta-gradient update involves a gradient through a gradient so that it requires second derivatives. In the process of the experiment from the authors, they do a **first-order approximation** i.e. The meta-optimization computes the meta-gradient at the post-update parameter values $\theta\_{i}^{\prime}$ instead of $\theta$:  
 $$
 \theta-\beta \nabla\_{\theta} \sum\_{\mathcal{T}\_{i} \sim p(\mathcal{T})} \mathcal{L}\_{\mathcal{T}\_{i}}\left(f\_{\theta\_{i}^{\prime}}\right)\ = \theta-\beta \sum\_{\mathcal{T}\_{i} \sim p(\mathcal{T})} \nabla\_{\theta} \mathcal{L}\_{\mathcal{T}\_{i}}\left(f\_{\theta\_{i}^{\prime}}\right) \approx \theta-\beta \sum\_{\mathcal{T}\_{i} \sim p(\mathcal{T})} \nabla\_{\theta\_{i}^{\prime}} \mathcal{L}\_{\mathcal{T}\_{i}}\left(f\_{\theta\_{i}^{\prime}}\right)
 $$  
+
+in short, we sample batches of task and for each task $\mathcal{T}_i$ in the batch, we minimize the loss using gradient descent and get the optimal parameter $\theta_i' $. Then before sampling another batch of tasks, we update our randomly initialized model parameter $\theta$ by calculating gradients with respect to the optimal parameters $\theta_i' $ in a new set(query set) of tasks $\mathcal{T}_i$.  
 
 ### Experiments
 #### Regression experiments
@@ -113,7 +121,7 @@ A resonalble explaination claims that too many contradictory outputs(e.g. y = 1 
 
 #### Classification experiments
 **Task:** N-way k-shot learning task. i.e. we're given K (e.g. 1 or 5) labelled examples for N classes that we have not previously trained on and asked to classify new instances into the N classes.  
-**Datasets:** Omniglot([Lake et al. 2011](http://web.mit.edu/jgross/Public/lake_etal_cogsci2011.pdf)) and MiniImagenet([Ravi & Larochelle, 2017](https://openreview.net/forum?id=rJY0-Kcll)). In this note I skip the experiments on MiniImagenet(lazy...)  
+**Datasets:** Omniglot([Lake et al. 2011](http://web.mit.edu/jgross/Public/lake_etal_cogsci2011.pdf)) and MiniImagenet([Ravi & Larochelle, 2017](https://openreview.net/forum?id=rJY0-Kcll)). In this note I skip the experiments on MiniImagenet(lazy...).  
 {% asset_img omniglot.png %}  
 Omniglot is a MNIST-like scribbles dataset with 1623 characters with 20 examples each.  
 **Architecture:** model's architecture is the same as embedding function in *Matching network*: a CNN with 4 modules of [3x3 CONV 64 filters, batchnorm, ReLU, 2x2 max pool] but using strided convolutions instead of max-pooling for experiments on omniglot. The last layer is fed into softmax.  
