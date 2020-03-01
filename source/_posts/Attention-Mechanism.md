@@ -79,7 +79,7 @@ Attention因为涉及到了度量距离，其在文本翻译问题中的物理�
 3. 根据系数对Value加权求和
 
 {% asset_img procedure.jpg %}  
-目前绝大多数具体的注意力机制计算方法都符合上述的三阶段抽象计算过程，以上仅是Soft attention的基本模型，还有一种Self attention未说明（懒）。  
+目前绝大多数具体的注意力机制计算方法都符合上述的三阶段抽象计算过程，以上仅是soft attention模型的思路，与之相对的是hard attention。soft attention是参数化的，通过softmax层算出一个个attention score，再对各自信息加权平均，因此方便求导以嵌入模型中训练。而hard attention相应操作是直接选择最高score对应的信息，或者可以在注意力分布式上随机采样，是一个不可导的过程。另外，根据不同的分类标准，还有许多其他的attention mechanism。    
 
 ## 总结
 1. 传统Encoder-Decoder框架应用于RNN使用定长中间向量，这限制了对长序列输入的学习
